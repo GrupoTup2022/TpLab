@@ -17,7 +17,7 @@ namespace TpLab.datos
 
         private HelperDB()
         {
-            cnn = new SqlConnection("placeholder");
+            cnn = new SqlConnection(@"workstation id=DBTpLab.mssql.somee.com;packet size=4096;user id=Lucas24865_SQLLogin_1;pwd=g8zyld4pdd;data source=DBTpLab.mssql.somee.com;persist security info=False;initial catalog=DBTpLab");
         }
 
         public static HelperDB ObtenerInstancia()
