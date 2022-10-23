@@ -14,10 +14,10 @@ namespace TpLab.datos
     {
         private static HelperDB instancia;
         private SqlConnection cnn;
-
+        private string connection = @"d29ya3N0YXRpb24gaWQ9REJUcExhYi5tc3NxbC5zb21lZS5jb207cGFja2V0IHNpemU9NDA5Njt1c2VyIGlkPUx1Y2FzMjQ4NjVfU1FMTG9naW5fMTtwd2Q9Zzh6eWxkNHBkZDtkYXRhIHNvdXJjZT1EQlRwTGFiLm1zc3FsLnNvbWVlLmNvbTtwZXJzaXN0IHNlY3VyaXR5IGluZm89RmFsc2U7aW5pdGlhbCBjYXRhbG9nPURCVHBMYWI=";
         private HelperDB()
-        {
-            cnn = new SqlConnection(@"a");
+        {            
+            cnn = new SqlConnection(System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(connection)));
         }
 
         public static HelperDB ObtenerInstancia()
