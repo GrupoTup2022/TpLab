@@ -20,7 +20,12 @@ namespace TpLab.Presentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            DataTable dt = Consultas.consultarTabla("select * from tickets");
+            dataGridView1.DataSource = Consultas.consultarTabla("select * from tickets");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
