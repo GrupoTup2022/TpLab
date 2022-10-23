@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TpLab.datos;
 
 namespace TpLab.Presentacion
 {
@@ -19,7 +20,7 @@ namespace TpLab.Presentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-
+            DataTable dt = Consultas.consultarTabla("select * from tickets");
         }
     }
 }

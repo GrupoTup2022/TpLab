@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarpinteriaApp.datos
+namespace TpLab.datos
 {
     public class Parametro
     {

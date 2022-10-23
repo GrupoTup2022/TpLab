@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
-namespace CarpinteriaApp.datos
+namespace TpLab.datos
 {
     class HelperDB
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarpinteriaApp.datos
+namespace TpLab.datos
 {
     public class Consultas
     {
@@ -39,6 +39,21 @@ namespace CarpinteriaApp.datos
                                 FROM Comprobantes c join Tickets t1 on
                                 c.id_comprobante = t1.id_comprobante
                                 WHERE datediff(month, fecha, GETDATE())=1)
+                                GROUP BY f.id_funcion, f.id_pelicula
+                                ORDER BY 1 desc";
+            return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
+        }
+        public static DataTable top_funciones_mes(int diferencia_de_mes)
+        {
+            string commando = @"--- TOP 5 de las funciones mas vendidas del mes ingresado
+                                SELECT TOP 5 count(nro_ticket)'Funciones Vendidas',f.id_funcion, f.id_pelicula
+                                'Pelicula'
+                                FROM Tickets t join Funciones f on t.id_funcion = f.id_funcion
+                                join Peliculas p on f.id_pelicula = p.id_pelicula
+                                WHERE f.id_funcion in (SELECT id_funcion
+                                FROM Comprobantes c join Tickets t1 on
+                                c.id_comprobante = t1.id_comprobante
+                                WHERE datediff(month, fecha, GETDATE())="+diferencia_de_mes.ToString()+@")
                                 GROUP BY f.id_funcion, f.id_pelicula
                                 ORDER BY 1 desc";
             return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
@@ -90,7 +105,6 @@ namespace CarpinteriaApp.datos
             param.Add(new Parametro("@id_promo", id_promo));
             return HelperDB.ObtenerInstancia().ConsultaEscalarSQLConParams(commando, param, "@nro_ticket");
         }
-        //arreglar
         public static DataTable funcion(string id_funcion)
         {
             /*string commando = @"--PROCEDIMIENTO ALMACENADO para consultar la funcion
