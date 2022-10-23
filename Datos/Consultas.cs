@@ -67,22 +67,22 @@ namespace CarpinteriaApp.datos
                                 group by s.id_sala, month(fecha), year(fecha)";
            return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
         }
-        //arreglar
         public static int insertar_ticket(string id_funcion, string id_butaca, string id_comprobante, string id_promo)
         {
-            string commando = @"--PROCEDIMIENTO ALMACENADO para ingresar tickets
-                                CREATE PROC SP_INSERTAR_TICKETS
-                                @id_funcion int,
-                                @id_butaca int,
-                                @id_comprobante int,
-                                @id_promo int,
-                                @nro_ticket int output
-                                AS
-                                BEGIN
-                                INSERT INTO Tickets (id_funcion, id_butaca, id_comprobante, id_promo)
-                                values (@id_funcion, @id_butaca, @id_comprobante, @id_promo)
-                                SET @nro_ticket = SCOPE_IDENTITY();
-                                END";
+            /* string commando = @"--PROCEDIMIENTO ALMACENADO para ingresar tickets
+                                 CREATE PROC SP_INSERTAR_TICKETS
+                                 @id_funcion int,
+                                 @id_butaca int,
+                                 @id_comprobante int,
+                                 @id_promo int,
+                                 @nro_ticket int output
+                                 AS
+                                 BEGIN
+                                 INSERT INTO Tickets (id_funcion, id_butaca, id_comprobante, id_promo)
+                                 values (@id_funcion, @id_butaca, @id_comprobante, @id_promo)
+                                 SET @nro_ticket = SCOPE_IDENTITY();
+                                 END";*/
+            string commando = "SP_INSERTAR_TICKETS";
             List<Parametro> param = new List<Parametro>();
             param.Add(new Parametro("@id_funcion", id_funcion));
             param.Add(new Parametro("@id_butaca", id_butaca));
@@ -93,7 +93,7 @@ namespace CarpinteriaApp.datos
         //arreglar
         public static DataTable funcion(string id_funcion)
         {
-            string commando = @"--PROCEDIMIENTO ALMACENADO para consultar la funcion
+            /*string commando = @"--PROCEDIMIENTO ALMACENADO para consultar la funcion
                                 create proc sp_CONSULTAR_FUNCION
                                 @id_funcion int
                                 AS
@@ -103,13 +103,13 @@ namespace CarpinteriaApp.datos
                                 join Funciones f on f.id_sala=b.id_sala
                                 left join tickets t on b.id_butaca=t.id_butaca
                                 where f.id_funcion=@id_funcion
-                                END";
+                                END";*/
+            string commando = "sp_CONSULTAR_FUNCION";
             List<Parametro> param = new List<Parametro>();
             param.Add(new Parametro("@id_funcion", id_funcion));
             return HelperDB.ObtenerInstancia().ConsultaSQL(commando,param);
         }
-        //arreglar
-        public static DataTable vista_ticket()
+        /*public static DataTable vista_ticket()
         {
             string commando = @"--vista del ticket y su precio final
                                 create view Ticket_Precio as
@@ -121,7 +121,6 @@ namespace CarpinteriaApp.datos
            return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
 
         }
-        //arreglar
         public static DataTable vista_comprobante()
         {
             string commando = @"--vista del comprobante y su precio final
@@ -134,8 +133,11 @@ namespace CarpinteriaApp.datos
                                 join Funciones f on t.id_funcion= f.id_funcion
                                 group by c.id_comprobante, c.fecha, c.id_forma_venta";
             return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
+        }*/
+        public static DataTable consultarTabla(string commando)
+        {
+            return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
         }
-
 
 
 
