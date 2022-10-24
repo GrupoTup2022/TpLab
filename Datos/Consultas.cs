@@ -27,6 +27,23 @@ namespace TpLab.datos
             return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
 
         }
+        public static DataTable Tickets_anio_pasado_genero(string genero)
+        {
+            string commando = @"--Mostrar la cantidad de Tikets que se vendieron el año pasado en el genero de
+                                Accion
+                                SELECT COUNT(nro_ticket) 'Cantidad de Entradas Vendidas'
+                                FROM Tickets t join Funciones f on t.id_funcion = f.id_funcion
+                                join Peliculas p on f.id_pelicula = p.id_pelicula
+                                join Peliculas_Generos pg on pg.id_pelicula = p.id_pelicula
+                                join Generos g on g.id_genero = pg.id_genero
+                                WHERE nro_ticket in (SELECT nro_ticket
+                                FROM Comprobantes c join tickets t1 on
+                                c.id_comprobante = t1.id_comprobante
+                                WHERE year(fecha) = year(GETDATE()) - 1) and
+                                genero like '"+genero+"%'";
+            return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
+
+        }
 
         public static DataTable top_funciones_mes_pasado()
         {
@@ -117,6 +134,7 @@ namespace TpLab.datos
                                 join Funciones f on f.id_sala=b.id_sala
                                 left join tickets t on b.id_butaca=t.id_butaca
                                 where f.id_funcion=@id_funcion
+                                order by 2
                                 END";*/
             string commando = "sp_CONSULTAR_FUNCION";
             List<Parametro> param = new List<Parametro>();
