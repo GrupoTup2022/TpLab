@@ -134,6 +134,7 @@ namespace TpLab.datos
                                 join Funciones f on f.id_sala=b.id_sala
                                 left join tickets t on b.id_butaca=t.id_butaca
                                 where f.id_funcion=@id_funcion
+                                order by 2
                                 END";*/
             string commando = "sp_CONSULTAR_FUNCION";
             List<Parametro> param = new List<Parametro>();

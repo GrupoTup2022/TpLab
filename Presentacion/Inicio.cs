@@ -20,12 +20,17 @@ namespace TpLab.Presentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Consultas.consultarTabla("select * from tickets");
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void ticketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TpLab.Luks.ComprobanteInsert nuevoComprobante = new TpLab.Luks.ComprobanteInsert();
+            nuevoComprobante.Show();
         }
     }
 }
