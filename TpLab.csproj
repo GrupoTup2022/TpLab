@@ -16,4 +16,19 @@
     <Folder Include="Nicolas\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Nicolas\DataSetTotalYear.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSetTotalYear.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Nicolas\DataSetTotalYear.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetTotalYear.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
 </Project>
