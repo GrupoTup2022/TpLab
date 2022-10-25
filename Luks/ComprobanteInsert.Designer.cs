@@ -40,6 +40,11 @@
             this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.dgv_Butacas = new System.Windows.Forms.DataGridView();
+            this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.B = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.C = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.D = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.E = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.n_cant = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,11 +56,6 @@
             this.btn_comprobante = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_pagos = new System.Windows.Forms.Button();
-            this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.B = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.C = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.D = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.E = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Butacas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cant)).BeginInit();
@@ -179,6 +179,37 @@
             this.dgv_Butacas.RowTemplate.Height = 25;
             this.dgv_Butacas.Size = new System.Drawing.Size(498, 233);
             this.dgv_Butacas.TabIndex = 11;
+            this.dgv_Butacas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Butacas_CellContentClick);
+            // 
+            // A
+            // 
+            this.A.HeaderText = "A";
+            this.A.Name = "A";
+            this.A.ReadOnly = true;
+            // 
+            // B
+            // 
+            this.B.HeaderText = "B";
+            this.B.Name = "B";
+            this.B.ReadOnly = true;
+            // 
+            // C
+            // 
+            this.C.HeaderText = "C";
+            this.C.Name = "C";
+            this.C.ReadOnly = true;
+            // 
+            // D
+            // 
+            this.D.HeaderText = "D";
+            this.D.Name = "D";
+            this.D.ReadOnly = true;
+            // 
+            // E
+            // 
+            this.E.HeaderText = "E";
+            this.E.Name = "E";
+            this.E.ReadOnly = true;
             // 
             // label5
             // 
@@ -287,36 +318,6 @@
             this.btn_pagos.TabIndex = 24;
             this.btn_pagos.Text = "Agregar Pagos";
             this.btn_pagos.UseVisualStyleBackColor = true;
-            // 
-            // A
-            // 
-            this.A.HeaderText = "A";
-            this.A.Name = "A";
-            this.A.ReadOnly = true;
-            // 
-            // B
-            // 
-            this.B.HeaderText = "B";
-            this.B.Name = "B";
-            this.B.ReadOnly = true;
-            // 
-            // C
-            // 
-            this.C.HeaderText = "C";
-            this.C.Name = "C";
-            this.C.ReadOnly = true;
-            // 
-            // D
-            // 
-            this.D.HeaderText = "D";
-            this.D.Name = "D";
-            this.D.ReadOnly = true;
-            // 
-            // E
-            // 
-            this.E.HeaderText = "E";
-            this.E.Name = "E";
-            this.E.ReadOnly = true;
             // 
             // ComprobanteInsert
             // 

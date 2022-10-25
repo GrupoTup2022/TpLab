@@ -23,6 +23,7 @@ namespace TpLab.Luks
         int cant;
         List<Ticket> tickets;
         Ticket ticket;
+        DataTable butacas;
 
         public ComprobanteInsert()
         {
@@ -93,7 +94,7 @@ namespace TpLab.Luks
                                                         " and id_sala = " + cbo_sala.SelectedValue );
             Funcion = new Funcion();
             Funcion.Id = tab.Rows[0].Field<int>(0);
-            DataTable butacas = Consultas.funcion(Funcion.Id.ToString());
+            butacas = Consultas.funcion(Funcion.Id.ToString());
             dgv_Butacas.Rows.Clear();
             int row = 0;
 
@@ -101,32 +102,40 @@ namespace TpLab.Luks
             {
                 dgv_Butacas.Columns[i].CellTemplate = new DataGridViewCheckBoxCell();
             }
-            List<bool> a = new List<bool>();
-            for (int i = 0; i < butacas.Rows.Count; i=i+5)
+            List<bool> ListaOcupada = new List<bool>();
+            List <string > ListaNombre = new List<string>();
+            for (int i = 0; i < butacas.Rows.Count; i = i + 5)
             {
-                a.Clear();
-                for (int j = 0; j<5; j++)  
+                ListaOcupada.Clear();
+                for (int j = 0; j < 5; j++)
                 {
-                    if((i+j)< butacas.Rows.Count) { 
-                        a.Add(butacas.Rows[i + j][4].ToString() == "");
+                    if ((i + j) < butacas.Rows.Count) {
+                        ListaOcupada.Add(butacas.Rows[i + j][4].ToString() != "");
                     }
                 }
+                if (ListaOcupada.Count > 4)
+                {
+                    dgv_Butacas.Rows.Add(ListaOcupada[0], ListaOcupada[1], ListaOcupada[2], ListaOcupada[3], ListaOcupada[4]);
+                }
+                else if (ListaOcupada.Count > 3)
+                {
+                    dgv_Butacas.Rows.Add(ListaOcupada[0], ListaOcupada[1], ListaOcupada[2], ListaOcupada[3]);
+                }
+                else if (ListaOcupada.Count > 2)
+                {
+                    dgv_Butacas.Rows.Add(ListaOcupada[0], ListaOcupada[1], ListaOcupada[2]);
+                }
+                else if (ListaOcupada.Count > 1)
+                {
+                    dgv_Butacas.Rows.Add(ListaOcupada[0], ListaOcupada[1]);
+                }
+                else
+                {
+                    dgv_Butacas.Rows.Add(ListaOcupada[0]);
+                }
                 row++;
-                if(a.Count>4)
-                dgv_Butacas.Rows.Add(a[0],a[1],a[2],a[3],a[4]);
-
-                else if (a.Count > 3)
-                    dgv_Butacas.Rows.Add(a[0], a[1], a[2], a[3]);
-
-                 else if (a.Count > 2)
-                    dgv_Butacas.Rows.Add(a[0], a[1], a[2]);
-
-                 else if (a.Count > 1)
-                    dgv_Butacas.Rows.Add(a[0], a[1]);
-            else
-                dgv_Butacas.Rows.Add(a[0]);
-
-        }
+            }
+            Fijar_butacas();
         }
         private void DeshabilitarTodo()
         {
@@ -143,6 +152,16 @@ namespace TpLab.Luks
             return 1;
         }
 
+        private void Fijar_butacas()
+        {
+            for(int i=0;i<dgv_Butacas.Rows.Count;i++)
+            {
+                for (int j=0;j<dgv_Butacas.Rows[i].Cells.Count;j++)
+                {
+                    dgv_Butacas.Rows[i].Cells[j].ReadOnly = true;
+                }
+            }
+        }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
@@ -216,6 +235,17 @@ namespace TpLab.Luks
         private void n_cant_ValueChanged(object sender, EventArgs e)
         {
             CargarDgvButacas();
+        }
+
+        private void dgv_Butacas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Boolean)dgv_Butacas.SelectedCells[0].Value!=true)
+            {
+                dgv_Butacas.SelectedCells[0].Value = true;
+                ticket.Butaca = new Butaca();
+                ticket.Butaca.Id = Convert.ToInt32(butacas.Rows[dgv_Butacas.SelectedCells[0].RowIndex][dgv_Butacas.SelectedCells[0].ColumnIndex].ToString()); 
+                
+            }
         }
     }
 }
