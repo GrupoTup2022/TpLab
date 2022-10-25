@@ -31,6 +31,7 @@ namespace TpLab.Luks
             InitializeComponent();
             DeshabilitarTodo();
             CargarPromos();
+            CargarFormasVenta();
             dtp_fecha.Value = DateTime.Now;
             tickets = new List<Ticket>();
             cant = 1;
@@ -94,8 +95,13 @@ namespace TpLab.Luks
             cbo_promos.DataSource = promos;
             cbo_promos.ValueMember = "id_promo";
             cbo_promos.DisplayMember = "descripcion";
-
-
+        }
+        private void CargarFormasVenta()
+        {
+            cbo_FormasVenta.DataSource = Consultas.consultarTabla(@"select id_forma_venta,descripcion
+                                                from formas_venta");
+            cbo_FormasVenta.ValueMember = "id_forma_venta";
+            cbo_FormasVenta.DisplayMember = "descripcion";
         }
         private void CargarDgvButacas()
         {
@@ -278,7 +284,7 @@ namespace TpLab.Luks
                 
                 foreach (DataGridViewRow row in dgv_tickets.Rows)
                 {
-                    if (row.Cells[0].Value.ToString() == ticket.Butaca.Id.ToString())
+                    if (row.Cells[0].Value.ToString() == butacas.Rows[dgv_Butacas.SelectedCells[0].RowIndex * 5 + dgv_Butacas.SelectedCells[0].ColumnIndex][0].ToString())
                     {
                         dgv_tickets.Rows.Remove(row);
                     }
@@ -289,6 +295,11 @@ namespace TpLab.Luks
         }
 
         private void cbo_promos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_pagos_Click(object sender, EventArgs e)
         {
 
         }

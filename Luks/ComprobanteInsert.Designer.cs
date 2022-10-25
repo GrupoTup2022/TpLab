@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dgv_tickets = new System.Windows.Forms.DataGridView();
+            this.ButacaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.promo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbo_peli = new System.Windows.Forms.ComboBox();
             this.cbo_sala = new System.Windows.Forms.ComboBox();
             this.cbo_horario = new System.Windows.Forms.ComboBox();
@@ -52,15 +55,11 @@
             this.cbo_FormasVenta = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btn_ticket = new System.Windows.Forms.Button();
             this.btn_comprobante = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_pagos = new System.Windows.Forms.Button();
             this.cbo_promos = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.ButacaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdPromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.promo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Butacas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cant)).BeginInit();
@@ -81,6 +80,24 @@
             this.dgv_tickets.RowTemplate.Height = 25;
             this.dgv_tickets.Size = new System.Drawing.Size(213, 352);
             this.dgv_tickets.TabIndex = 0;
+            // 
+            // ButacaID
+            // 
+            this.ButacaID.HeaderText = "ButacaID";
+            this.ButacaID.Name = "ButacaID";
+            this.ButacaID.ReadOnly = true;
+            // 
+            // IdPromo
+            // 
+            this.IdPromo.HeaderText = "IdPromo";
+            this.IdPromo.Name = "IdPromo";
+            this.IdPromo.ReadOnly = true;
+            // 
+            // promo
+            // 
+            this.promo.HeaderText = "Promo";
+            this.promo.Name = "promo";
+            this.promo.ReadOnly = true;
             // 
             // cbo_peli
             // 
@@ -291,18 +308,9 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Forma de Pago";
             // 
-            // btn_ticket
-            // 
-            this.btn_ticket.Location = new System.Drawing.Point(557, 397);
-            this.btn_ticket.Name = "btn_ticket";
-            this.btn_ticket.Size = new System.Drawing.Size(85, 41);
-            this.btn_ticket.TabIndex = 21;
-            this.btn_ticket.Text = "Agregar Ticket";
-            this.btn_ticket.UseVisualStyleBackColor = true;
-            // 
             // btn_comprobante
             // 
-            this.btn_comprobante.Location = new System.Drawing.Point(681, 397);
+            this.btn_comprobante.Location = new System.Drawing.Point(655, 397);
             this.btn_comprobante.Name = "btn_comprobante";
             this.btn_comprobante.Size = new System.Drawing.Size(89, 41);
             this.btn_comprobante.TabIndex = 22;
@@ -327,6 +335,7 @@
             this.btn_pagos.TabIndex = 24;
             this.btn_pagos.Text = "Agregar Pagos";
             this.btn_pagos.UseVisualStyleBackColor = true;
+            this.btn_pagos.Click += new System.EventHandler(this.btn_pagos_Click);
             // 
             // cbo_promos
             // 
@@ -346,24 +355,6 @@
             this.label10.TabIndex = 26;
             this.label10.Text = "Promo:";
             // 
-            // ButacaID
-            // 
-            this.ButacaID.HeaderText = "ButacaID";
-            this.ButacaID.Name = "ButacaID";
-            this.ButacaID.ReadOnly = true;
-            // 
-            // IdPromo
-            // 
-            this.IdPromo.HeaderText = "IdPromo";
-            this.IdPromo.Name = "IdPromo";
-            this.IdPromo.ReadOnly = true;
-            // 
-            // promo
-            // 
-            this.promo.HeaderText = "Promo";
-            this.promo.Name = "promo";
-            this.promo.ReadOnly = true;
-            // 
             // ComprobanteInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -374,7 +365,6 @@
             this.Controls.Add(this.btn_pagos);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_comprobante);
-            this.Controls.Add(this.btn_ticket);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbo_FormasVenta);
