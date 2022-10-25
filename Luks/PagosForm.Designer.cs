@@ -33,14 +33,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tb_monto = new System.Windows.Forms.TextBox();
             this.dgv_lista = new System.Windows.Forms.DataGridView();
+            this.FP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_restante = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.btn_terminar = new System.Windows.Forms.Button();
-            this.FP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +95,19 @@
             this.dgv_lista.TabIndex = 4;
             this.dgv_lista.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // FP
+            // 
+            this.FP.HeaderText = "Forma Pago";
+            this.FP.Name = "FP";
+            this.FP.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FP.Width = 70;
+            // 
+            // Monto
+            // 
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.Width = 70;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -112,6 +125,7 @@
             this.lbl_restante.Size = new System.Drawing.Size(38, 15);
             this.lbl_restante.TabIndex = 6;
             this.lbl_restante.Text = "label4";
+            this.lbl_restante.Click += new System.EventHandler(this.lbl_restante_Click);
             // 
             // lbl_total
             // 
@@ -151,19 +165,6 @@
             this.btn_terminar.Text = "Terminar";
             this.btn_terminar.UseVisualStyleBackColor = true;
             this.btn_terminar.Click += new System.EventHandler(this.btn_terminar_Click);
-            // 
-            // FP
-            // 
-            this.FP.HeaderText = "Forma Pago";
-            this.FP.Name = "FP";
-            this.FP.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FP.Width = 70;
-            // 
-            // Monto
-            // 
-            this.Monto.HeaderText = "Monto";
-            this.Monto.Name = "Monto";
-            this.Monto.Width = 70;
             // 
             // PagosForm
             // 

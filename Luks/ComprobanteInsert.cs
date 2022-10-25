@@ -26,6 +26,7 @@ namespace TpLab.Luks
         Ticket ticket;
         DataTable butacas;
         DataTable promos;
+        double monto;
 
         public ComprobanteInsert()
         {
@@ -35,7 +36,16 @@ namespace TpLab.Luks
             CargarFormasVenta();
             dtp_fecha.Value = DateTime.Now;
             tickets = new List<Ticket>();
+            PagosList = new List<Pagos>();
             cant = 1;
+            monto = 0;
+            Funcion = new Funcion();
+            peli = new Pelicula();
+            horario = new Horario();
+            sala = new Sala();
+            Funcion.Pelicula = peli;
+            Funcion.Horario = horario;
+            Funcion.Sala = sala; 
         }
 
 
@@ -106,15 +116,17 @@ namespace TpLab.Luks
         }
         private void CargarDgvButacas()
         {
-            DataTable tab = Consultas.consultarTabla(@"select id_funcion
-                                                        from Funciones
+            DataTable tab = Consultas.consultarTabla(@"select f.id_funcion, titulo_local, precio
+                                                        from Funciones f
+                                                        join peliculas p on f.id_pelicula = p.id_pelicula
                                                         where fecha = '" + dtp_fecha.Value.ToString("yyyy-MM-dd") +
-                                                        "' and id_pelicula = " + cbo_peli.SelectedValue +
+                                                        "' and f.id_pelicula = " + cbo_peli.SelectedValue +
                                                         " and id_audio = " + cbo_audio.SelectedValue +
                                                         " and id_horario = " + cbo_horario.SelectedValue +
                                                         " and id_sala = " + cbo_sala.SelectedValue );
-            Funcion = new Funcion();
             Funcion.Id = tab.Rows[0].Field<int>(0);
+            Funcion.Pelicula.Titulo_Local = tab.Rows[0].Field<string>(1);
+            Funcion.Precio = tab.Rows[0].Field<int>(2);
             butacas = Consultas.funcion(Funcion.Id.ToString());
             dgv_Butacas.Rows.Clear();
             int row = 0;
@@ -218,6 +230,8 @@ namespace TpLab.Luks
                 cbo_audio.Enabled = true;
                 cbo_horario.SelectedIndex = -1;
                 cbo_sala.SelectedIndex = -1;
+                if (cbo_peli.Text != "")
+                    Funcion.Pelicula.Titulo_Local = cbo_peli.Text.ToString();
             }
         }
 
@@ -229,7 +243,8 @@ namespace TpLab.Luks
                 cbo_sala.Enabled = true;
                 cbo_sala.SelectedIndex = -1;
                 n_cant.Enabled = false;
-
+                if (cbo_horario.Text != "")
+                    Funcion.Horario.Nombre=cbo_horario.Text.ToString();
             }
         }
 
@@ -255,7 +270,11 @@ namespace TpLab.Luks
                 n_cant.Enabled = true;
                 n_cant.Value = 1;
                 if (cbo_sala.SelectedValue != null)
-                CargarDgvButacas();
+                {
+                    CargarDgvButacas();
+                    Funcion.Sala.Id = Convert.ToInt32(cbo_sala.SelectedValue);
+                    Funcion.Sala.Nombre = cbo_sala.Text.ToString();
+                }
             }
         }
 
@@ -279,7 +298,7 @@ namespace TpLab.Luks
                 ticket.Promo.Porcentaje = float.Parse(promos.Rows[cbo_promos.SelectedIndex]["porcentaje"].ToString());
                 ticket.Promo.Descripcion = promos.Rows[cbo_promos.SelectedIndex]["descripcion"].ToString();
                 tickets.Add(ticket);
-                dgv_tickets.Rows.Add(ticket.Butaca.Id, Funcion.Id, ticket.Promo.Descripcion);
+                dgv_tickets.Rows.Add( ticket.Butaca.Id,Funcion.Sala.Nombre,Funcion.Horario.Nombre, Funcion.Pelicula.Titulo_Local, Funcion.Precio,ticket.Promo.Porcentaje,ticket.Promo.Descripcion,ticket.Promo.Porcentaje*ticket.Funcion.Precio/100);
                 cant--;
             }
             else if ((Boolean)dgv_Butacas.SelectedCells[0].Value == true && !dgv_Butacas.SelectedCells[0].ReadOnly)
@@ -306,10 +325,13 @@ namespace TpLab.Luks
 
         private void btn_pagos_Click(object sender, EventArgs e)
         {
-            PagosForm pagos = new PagosForm();
-            PagosList = new List<Pagos>();
+            foreach (Ticket t in tickets)
+            {
+                monto = (t.Funcion.Precio * t.Promo.Porcentaje / 100) + monto;
+            }
+            PagosForm pagos = new PagosForm(monto,PagosList);
             pagos.Show();
-            pagos.PagosList = PagosList;
+            
         }
 
         private void dgv_tickets_CellContentClick(object sender, DataGridViewCellEventArgs e)

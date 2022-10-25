@@ -9,6 +9,6 @@ namespace LibreriaTp
     public class Pagos
     {
         public FormaPago FormaPago { get; set; }
-        public decimal Monto { get; set; }
+        public double Monto { get; set; }
     }
 }
