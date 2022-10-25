@@ -89,16 +89,30 @@ namespace TpLab.datos
         public static DataTable monto_sala_mes()
         {
             string commando = @"---monto total facturado por sala y por mes
-                                select sum(f.precio* p.porcentaje/100) 'Monto total facturado por
-                                sala',s.id_sala,month(fecha) 'Mes',year(fecha)'Año'
+                                select sum(f.precio* p.porcentaje/100) 'Total Facturado',s.id_sala,month(f.fecha) 'Mes',year(f.fecha)'Año'
                                 from tickets t
                                 join Comprobantes c on c.id_comprobante=t.id_comprobante
                                     join promos p on p.id_promo = t.id_promo
                                 join funciones f on f.id_funcion = t.id_funcion
                                 join Salas s on s.id_sala = f.id_sala
-                                group by s.id_sala, month(fecha), year(fecha)";
+                                group by s.id_sala, month(f.fecha), year(f.fecha)";
            return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
         }
+
+        public static DataTable vendido_sala_thisyear()
+
+        {
+            string commando = @"---Cantidad de entradas vendidas por sala este año
+                                select count(nro_ticket)'Cantidad de tickets', s.id_sala 
+                                from tickets t 
+                                join Comprobantes c on c.id_comprobante=t.id_comprobante 
+                                join Butacas b on b.id_butaca = t.id_butaca 
+                                join Salas s on s.id_sala = b.id_sala 
+                                where DATEDIFF(year, year(fecha),year(getdate())) = 0 
+                                group by s.id_sala ";
+            return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
+        }
+
         public static int insertar_ticket(string id_funcion, string id_butaca, string id_comprobante, string id_promo)
         {
             /* string commando = @"--PROCEDIMIENTO ALMACENADO para ingresar tickets
