@@ -56,6 +56,11 @@
             this.btn_comprobante = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_pagos = new System.Windows.Forms.Button();
+            this.cbo_promos = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ButacaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.promo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Butacas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cant)).BeginInit();
@@ -66,6 +71,10 @@
             this.dgv_tickets.AllowUserToAddRows = false;
             this.dgv_tickets.AllowUserToDeleteRows = false;
             this.dgv_tickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_tickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ButacaID,
+            this.IdPromo,
+            this.promo});
             this.dgv_tickets.Location = new System.Drawing.Point(557, 39);
             this.dgv_tickets.Name = "dgv_tickets";
             this.dgv_tickets.ReadOnly = true;
@@ -214,7 +223,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(303, 96);
+            this.label5.Location = new System.Drawing.Point(303, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 15);
             this.label5.TabIndex = 13;
@@ -222,7 +231,7 @@
             // 
             // n_cant
             // 
-            this.n_cant.Location = new System.Drawing.Point(380, 93);
+            this.n_cant.Location = new System.Drawing.Point(380, 121);
             this.n_cant.Minimum = new decimal(new int[] {
             1,
             0,
@@ -319,11 +328,49 @@
             this.btn_pagos.Text = "Agregar Pagos";
             this.btn_pagos.UseVisualStyleBackColor = true;
             // 
+            // cbo_promos
+            // 
+            this.cbo_promos.FormattingEnabled = true;
+            this.cbo_promos.Location = new System.Drawing.Point(380, 86);
+            this.cbo_promos.Name = "cbo_promos";
+            this.cbo_promos.Size = new System.Drawing.Size(121, 23);
+            this.cbo_promos.TabIndex = 25;
+            this.cbo_promos.SelectedIndexChanged += new System.EventHandler(this.cbo_promos_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(315, 89);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 15);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Promo:";
+            // 
+            // ButacaID
+            // 
+            this.ButacaID.HeaderText = "ButacaID";
+            this.ButacaID.Name = "ButacaID";
+            this.ButacaID.ReadOnly = true;
+            // 
+            // IdPromo
+            // 
+            this.IdPromo.HeaderText = "IdPromo";
+            this.IdPromo.Name = "IdPromo";
+            this.IdPromo.ReadOnly = true;
+            // 
+            // promo
+            // 
+            this.promo.HeaderText = "Promo";
+            this.promo.Name = "promo";
+            this.promo.ReadOnly = true;
+            // 
             // ComprobanteInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cbo_promos);
             this.Controls.Add(this.btn_pagos);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_comprobante);
@@ -388,5 +435,10 @@
         private DataGridViewCheckBoxColumn C;
         private DataGridViewCheckBoxColumn D;
         private DataGridViewCheckBoxColumn E;
+        private ComboBox cbo_promos;
+        private Label label10;
+        private DataGridViewTextBoxColumn ButacaID;
+        private DataGridViewTextBoxColumn IdPromo;
+        private DataGridViewTextBoxColumn promo;
     }
 }
