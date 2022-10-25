@@ -22,6 +22,7 @@ namespace TpLab.Luks
         Funcion Funcion;
         int cant;
         List<Ticket> tickets;
+        public List<Pagos> PagosList { get; set; }
         Ticket ticket;
         DataTable butacas;
         DataTable promos;
@@ -38,7 +39,7 @@ namespace TpLab.Luks
         }
 
 
-        private void CargarComboPeli()
+        private void CargarComboPeli()//********************************
         {
             DataTable dt = new DataTable();
             dt = Consultas.consultarTabla(@"select distinct p.titulo_local,p.id_pelicula
@@ -300,6 +301,12 @@ namespace TpLab.Luks
         }
 
         private void btn_pagos_Click(object sender, EventArgs e)
+        {
+            Form pagos = new PagosForm();
+            pagos.Show();
+        }
+
+        private void dgv_tickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

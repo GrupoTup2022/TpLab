@@ -80,6 +80,7 @@
             this.dgv_tickets.RowTemplate.Height = 25;
             this.dgv_tickets.Size = new System.Drawing.Size(213, 352);
             this.dgv_tickets.TabIndex = 0;
+            this.dgv_tickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tickets_CellContentClick);
             // 
             // ButacaID
             // 
