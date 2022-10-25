@@ -32,6 +32,7 @@
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insertarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaGenaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,8 @@
             // 
             // consultaToolStripMenuItem
             // 
+            this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.consultaGenaToolStripMenuItem});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.consultaToolStripMenuItem.Text = "Consulta ";
@@ -63,9 +66,16 @@
             // ticketToolStripMenuItem
             // 
             this.ticketToolStripMenuItem.Name = "ticketToolStripMenuItem";
-            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.ticketToolStripMenuItem.Text = "Ticket";
             this.ticketToolStripMenuItem.Click += new System.EventHandler(this.ticketToolStripMenuItem_Click);
+            // 
+            // consultaGenaToolStripMenuItem
+            // 
+            this.consultaGenaToolStripMenuItem.Name = "consultaGenaToolStripMenuItem";
+            this.consultaGenaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaGenaToolStripMenuItem.Text = "Consulta Gena";
+            this.consultaGenaToolStripMenuItem.Click += new System.EventHandler(this.consultaGenaToolStripMenuItem_Click);
             // 
             // Inicio
             // 
@@ -90,5 +100,6 @@
         private ToolStripMenuItem consultaToolStripMenuItem;
         private ToolStripMenuItem insertarToolStripMenuItem;
         private ToolStripMenuItem ticketToolStripMenuItem;
+        private ToolStripMenuItem consultaGenaToolStripMenuItem;
     }
 }

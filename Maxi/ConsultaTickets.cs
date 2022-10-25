@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,17 +21,41 @@ namespace TpLab.Maxi
 
         private void ConsultaTickets_Load(object sender, EventArgs e)
         {
-            CargarDGV();   
+            CargarDGV();          
+            //CargarCombo("select * from Generos",cboGeneros);
+            CargarCombo("select id_sala, descripcion from salas",cboSalas);
+            
+
         }
         public void CargarDGV()
         {
-            DataTable dt = Consultas.consultarTabla("select t.nro_ticket 'TICKET', titulo_local 'PELICULA' , p.descripcion 'PROMO', t.[Precio] 'PRECIO'\r\n, nro_butaca 'BUTACA', id_comprobante 'COMPROBANTE', genero 'GENERO', s.descripcion 'SALA'\r\nfrom Ticket_Precio t join Funciones as f on f.id_funcion = t.id_funcion\r\njoin Peliculas as p on f.id_pelicula = p.id_pelicula\r\njoin Butacas as b on b.id_butaca = t.id_butaca\r\njoin Salas s on s.id_sala = b.id_sala\r\njoin Peliculas_Generos pg on p.id_pelicula = pg.id_pelicula\r\njoin Generos g on pg.id_genero = g.id_genero\r\n");
-            dataGridView1.DataSource = dt;
+            DataTable dt = Consultas.consultarTabla("select t.nro_ticket 'TICKET', titulo_local 'PELICULA' ,genero 'GENERO', s.descripcion 'SALA',p.descripcion 'PROMO', t.[Precio] 'PRECIO'\r\n, nro_butaca 'BUTACA', id_comprobante 'COMPROBANTE'\r\nfrom Ticket_Precio t join Funciones as f on f.id_funcion = t.id_funcion\r\njoin Peliculas as p on f.id_pelicula = p.id_pelicula\r\njoin Butacas as b on b.id_butaca = t.id_butaca\r\njoin Salas s on s.id_sala = b.id_sala\r\njoin Peliculas_Generos pg on p.id_pelicula = pg.id_pelicula\r\njoin Generos g on pg.id_genero = g.id_genero");
+            dgvConsultaTickets.DataSource = dt;            
+        }
+
+        public void CargarCombo(string Consulta, ComboBox cbo)
+        {
+            DataTable dt = Consultas.consultarTabla(Consulta);
+            cbo.DataSource = dt;
+            cbo.DisplayMember = dt.Columns[1].ColumnName;
+            cbo.ValueMember = dt.Columns[0].ColumnName;
+            cbo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbo.SelectedIndex = -1;
             
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnConsultar_Click(object sender, EventArgs e)
         {
+            string Consulta = "select t.nro_ticket 'TICKET', titulo_local 'PELICULA' ,genero 'GENERO', s.descripcion 'SALA',p.descripcion 'PROMO', t.[Precio] 'PRECIO'\r\n, nro_butaca 'BUTACA', id_comprobante 'COMPROBANTE'\r\nfrom Ticket_Precio t join Funciones as f on f.id_funcion = t.id_funcion\r\njoin Peliculas as p on f.id_pelicula = p.id_pelicula\r\njoin Butacas as b on b.id_butaca = t.id_butaca\r\njoin Salas s on s.id_sala = b.id_sala\r\njoin Peliculas_Generos pg on p.id_pelicula = pg.id_pelicula\r\njoin Generos g on pg.id_genero = g.id_genero";
+            DateTime desde = dtpDesde.Value;
+            DateTime hasta = dtpHasta.Value;
+            string Sala = cboSalas.Text;
+            string Genero = cboGeneros.Text;
+            if (cboGeneros.Text != "Todos")
+            {
+                Consulta += "WHERE fecha between '" + desde.ToString("dd/MM/yyyy") + "' and '" + hasta.ToString("dd/MM/yyyy") + "'";
+            }
+
 
         }
     }

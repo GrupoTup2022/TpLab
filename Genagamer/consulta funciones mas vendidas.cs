@@ -61,7 +61,14 @@ namespace TpLab.Genagamer
         }
         private void cargarGeneros()
         {
-            CBgeneros.DataSource = Consultas.consultarTabla("generos");
+            CBgeneros.DataSource = Consultas.consultarTabla(@"select * from generos");
+            CBgeneros.DisplayMember = "genero";
+            CBgeneros.ValueMember = "id_genero";
+        }
+
+        private void CBgeneros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
