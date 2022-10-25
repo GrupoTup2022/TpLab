@@ -39,5 +39,11 @@ namespace TpLab.Presentacion
             TpLab.Genagamer.consulta_funciones_mas_vendidas ConsultaFuncion = new consulta_funciones_mas_vendidas();
             ConsultaFuncion.Show();
         }
+
+        private void consultaMaxiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TpLab.Maxi.ConsultaTickets consulta = new Maxi.ConsultaTickets();
+            consulta.Show();
+        }
     }
 }

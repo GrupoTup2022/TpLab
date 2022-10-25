@@ -30,9 +30,10 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaGenaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insertarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultaGenaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaMaxiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,10 +51,18 @@
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultaGenaToolStripMenuItem});
+            this.consultaGenaToolStripMenuItem,
+            this.consultaMaxiToolStripMenuItem});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.consultaToolStripMenuItem.Text = "Consulta ";
+            // 
+            // consultaGenaToolStripMenuItem
+            // 
+            this.consultaGenaToolStripMenuItem.Name = "consultaGenaToolStripMenuItem";
+            this.consultaGenaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaGenaToolStripMenuItem.Text = "Consulta Gena";
+            this.consultaGenaToolStripMenuItem.Click += new System.EventHandler(this.consultaGenaToolStripMenuItem_Click);
             // 
             // insertarToolStripMenuItem
             // 
@@ -70,12 +79,12 @@
             this.ticketToolStripMenuItem.Text = "Ticket";
             this.ticketToolStripMenuItem.Click += new System.EventHandler(this.ticketToolStripMenuItem_Click);
             // 
-            // consultaGenaToolStripMenuItem
+            // consultaMaxiToolStripMenuItem
             // 
-            this.consultaGenaToolStripMenuItem.Name = "consultaGenaToolStripMenuItem";
-            this.consultaGenaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultaGenaToolStripMenuItem.Text = "Consulta Gena";
-            this.consultaGenaToolStripMenuItem.Click += new System.EventHandler(this.consultaGenaToolStripMenuItem_Click);
+            this.consultaMaxiToolStripMenuItem.Name = "consultaMaxiToolStripMenuItem";
+            this.consultaMaxiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaMaxiToolStripMenuItem.Text = "Consulta Maxi";
+            this.consultaMaxiToolStripMenuItem.Click += new System.EventHandler(this.consultaMaxiToolStripMenuItem_Click);
             // 
             // Inicio
             // 
@@ -101,5 +110,6 @@
         private ToolStripMenuItem insertarToolStripMenuItem;
         private ToolStripMenuItem ticketToolStripMenuItem;
         private ToolStripMenuItem consultaGenaToolStripMenuItem;
+        private ToolStripMenuItem consultaMaxiToolStripMenuItem;
     }
 }
