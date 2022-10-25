@@ -179,7 +179,10 @@ namespace TpLab.Luks
             {
                 for (int j=0;j<dgv_Butacas.Rows[i].Cells.Count;j++)
                 {
+                    if ((Boolean)dgv_Butacas.Rows[i].Cells[j].Value)
                     dgv_Butacas.Rows[i].Cells[j].ReadOnly = true;
+                    else
+                    dgv_Butacas.Rows[i].Cells[j].ReadOnly = false;
                 }
             }
         }
@@ -279,7 +282,7 @@ namespace TpLab.Luks
                 dgv_tickets.Rows.Add(ticket.Butaca.Id, Funcion.Id, ticket.Promo.Descripcion);
                 cant--;
             }
-            else if ((Boolean)dgv_Butacas.SelectedCells[0].Value == true)
+            else if ((Boolean)dgv_Butacas.SelectedCells[0].Value == true && !dgv_Butacas.SelectedCells[0].ReadOnly)
             {
                 dgv_Butacas.SelectedCells[0].Value = false;   
                 
@@ -291,6 +294,7 @@ namespace TpLab.Luks
                     }
                 }                
                      tickets.Remove(ticket);
+                if(Convert.ToInt32(n_cant.Value)<=cant+1)
                 cant++;
             }
         }
@@ -302,13 +306,32 @@ namespace TpLab.Luks
 
         private void btn_pagos_Click(object sender, EventArgs e)
         {
-            Form pagos = new PagosForm();
+            PagosForm pagos = new PagosForm();
+            PagosList = new List<Pagos>();
             pagos.Show();
+            pagos.PagosList = PagosList;
         }
 
         private void dgv_tickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btn_comprobante_Click(object sender, EventArgs e)
+        {
+            int nroC = Consultas.insertar_comprobante(cbo_FormasVenta.SelectedValue.ToString());
+
+            foreach(Pagos p in PagosList)
+            {
+                Consultas.insertar_fp(p.FormaPago.Id.ToString(), nroC.ToString(), p.Monto.ToString());
+            }
+
+            foreach (Ticket t in tickets)
+            {
+                Consultas.insertar_ticket(t.Funcion.Id.ToString(),t.Butaca.Id.ToString(), nroC.ToString(), t.Promo.Id.ToString());
+            }
+            MessageBox.Show("Se ingresó el comprobante: "+nroC+" al sistema");
+            this.Close();
         }
     }
 }

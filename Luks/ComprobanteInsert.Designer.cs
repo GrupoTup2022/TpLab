@@ -317,6 +317,7 @@
             this.btn_comprobante.TabIndex = 22;
             this.btn_comprobante.Text = "Terminar Comprobante";
             this.btn_comprobante.UseVisualStyleBackColor = true;
+            this.btn_comprobante.Click += new System.EventHandler(this.btn_comprobante_Click);
             // 
             // btn_cancelar
             // 

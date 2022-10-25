@@ -139,6 +139,25 @@ namespace TpLab.datos
             param.Add(new Parametro("@id_forma_venta", id_forma_venta));
             return HelperDB.ObtenerInstancia().ConsultaEscalarSQLConParams(commando, param, "@id_comprobante");
         }
+        public static int insertar_fp(string id_forma_pago,string id_comprobante,string importe)
+        {
+            /* string commando = @"--PROCEDIMIENTO ALMACENADO para ingresar tickets
+                                 CREATE PROC SP_INSERTAR_PAGOS
+                                 @id_forma_pago int,
+                                 @id_comprobante int,
+                                 @importe int
+                                 AS
+                                 BEGIN
+                                 INSERT INTO Comprobantes_Formas_pago (id_forma_pago, id_comprobante,importe)
+                                 values (@id_forma_pago,@id_comprobante,@importe)
+                                 END";*/
+            string commando = "SP_INSERTAR_COMPROBANTE";
+            List<Parametro> param = new List<Parametro>();
+            param.Add(new Parametro("@id_forma_pago", id_forma_pago));
+            param.Add(new Parametro("@id_comprobante", id_comprobante));
+            param.Add(new Parametro("@importe", importe));
+            return HelperDB.ObtenerInstancia().EjecutarSQL(commando, param);
+        }
         public static DataTable funcion(string id_funcion)
         {
             /*string commando = @"--PROCEDIMIENTO ALMACENADO para consultar la funcion

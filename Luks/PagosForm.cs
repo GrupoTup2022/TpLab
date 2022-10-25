@@ -14,20 +14,13 @@ namespace TpLab.Luks
 {
     public partial class PagosForm : Form
     {
-        public static List<Pagos> PagosList;
+        public List<Pagos> PagosList { get; set; }
         public PagosForm()
         {
             InitializeComponent();
             CargarFormasVenta();
             cb_fp.SelectedIndex = 0;
-        }
-        public static List<Pagos> GetPagos()
-        {
-            return PagosList;
-        }
-        public static void SetPagos(List<Pagos> list)
-        {
-            PagosList = list;
+            PagosList = new List<Pagos>();
         }
 
         private void CargarFormasVenta()
@@ -52,7 +45,7 @@ namespace TpLab.Luks
         {
             FormaPago fp = new FormaPago();
             fp.Id = Convert.ToInt32(cb_fp.SelectedValue);
-            fp.Nombre = cb_fp.SelectedItem.ToString();
+            fp.Nombre = cb_fp.Text;
             Pagos pagos = new Pagos();
             pagos.FormaPago = fp;
             pagos.Monto = Convert.ToDecimal(tb_monto.Text);
@@ -62,7 +55,7 @@ namespace TpLab.Luks
 
         private void btn_terminar_Click(object sender, EventArgs e)
         {
-            ((ComprobanteInsert)Owner).PagosList = PagosList;
+            this.Close();
         }
     }
 }

@@ -39,6 +39,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.btn_terminar = new System.Windows.Forms.Button();
+            this.FP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,9 +79,17 @@
             // 
             // dgv_lista
             // 
+            this.dgv_lista.AllowUserToAddRows = false;
+            this.dgv_lista.AllowUserToDeleteRows = false;
+            this.dgv_lista.AllowUserToResizeColumns = false;
+            this.dgv_lista.AllowUserToResizeRows = false;
             this.dgv_lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_lista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.FP,
+            this.Monto});
             this.dgv_lista.Location = new System.Drawing.Point(264, 12);
             this.dgv_lista.Name = "dgv_lista";
+            this.dgv_lista.RowHeadersVisible = false;
             this.dgv_lista.RowTemplate.Height = 25;
             this.dgv_lista.Size = new System.Drawing.Size(147, 210);
             this.dgv_lista.TabIndex = 4;
@@ -142,6 +152,19 @@
             this.btn_terminar.UseVisualStyleBackColor = true;
             this.btn_terminar.Click += new System.EventHandler(this.btn_terminar_Click);
             // 
+            // FP
+            // 
+            this.FP.HeaderText = "Forma Pago";
+            this.FP.Name = "FP";
+            this.FP.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FP.Width = 70;
+            // 
+            // Monto
+            // 
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.Width = 70;
+            // 
             // PagosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -179,5 +202,7 @@
         private Label label6;
         private Button btn_agregar;
         private Button btn_terminar;
+        private DataGridViewTextBoxColumn FP;
+        private DataGridViewTextBoxColumn Monto;
     }
 }
