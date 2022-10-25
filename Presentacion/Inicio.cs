@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpLab.datos;
+using TpLab.Genagamer;
 
 namespace TpLab.Presentacion
 {
@@ -31,6 +32,12 @@ namespace TpLab.Presentacion
         {
             TpLab.Luks.ComprobanteInsert nuevoComprobante = new TpLab.Luks.ComprobanteInsert();
             nuevoComprobante.Show();
+        }
+
+        private void consultaGenaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TpLab.Genagamer.consulta_funciones_mas_vendidas ConsultaFuncion = new consulta_funciones_mas_vendidas();
+            ConsultaFuncion.Show();
         }
     }
 }

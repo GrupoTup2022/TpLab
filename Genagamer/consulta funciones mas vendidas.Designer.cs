@@ -30,19 +30,19 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CBgeneros = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DTPmes = new System.Windows.Forms.DateTimePicker();
             this.btn_consultar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.funcionCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tituloPeliculaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.generoCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CBgeneros = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.DTPmes = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -71,31 +71,22 @@
             this.groupBox1.Text = "Funciones más vendidas según el mes y género:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // label2
+            // DTPmes
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Seleccione un género:";
+            this.DTPmes.Location = new System.Drawing.Point(159, 87);
+            this.DTPmes.Name = "DTPmes";
+            this.DTPmes.Size = new System.Drawing.Size(134, 23);
+            this.DTPmes.TabIndex = 6;
+            this.DTPmes.ValueChanged += new System.EventHandler(this.DTPmes_ValueChanged);
             // 
-            // label3
+            // btn_consultar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 93);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Seleccione un mes:";
-            // 
-            // CBgeneros
-            // 
-            this.CBgeneros.FormattingEnabled = true;
-            this.CBgeneros.Location = new System.Drawing.Point(159, 33);
-            this.CBgeneros.Name = "CBgeneros";
-            this.CBgeneros.Size = new System.Drawing.Size(158, 23);
-            this.CBgeneros.TabIndex = 2;
+            this.btn_consultar.Location = new System.Drawing.Point(159, 140);
+            this.btn_consultar.Name = "btn_consultar";
+            this.btn_consultar.Size = new System.Drawing.Size(121, 23);
+            this.btn_consultar.TabIndex = 5;
+            this.btn_consultar.Text = "CONSULTAR";
+            this.btn_consultar.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -113,15 +104,6 @@
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(793, 236);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // btn_consultar
-            // 
-            this.btn_consultar.Location = new System.Drawing.Point(159, 140);
-            this.btn_consultar.Name = "btn_consultar";
-            this.btn_consultar.Size = new System.Drawing.Size(121, 23);
-            this.btn_consultar.TabIndex = 5;
-            this.btn_consultar.Text = "CONSULTAR";
-            this.btn_consultar.UseVisualStyleBackColor = true;
             // 
             // idCLM
             // 
@@ -155,6 +137,33 @@
             this.salaCLM.HeaderText = "Sala";
             this.salaCLM.Name = "salaCLM";
             // 
+            // CBgeneros
+            // 
+            this.CBgeneros.FormattingEnabled = true;
+            this.CBgeneros.Location = new System.Drawing.Point(159, 33);
+            this.CBgeneros.Name = "CBgeneros";
+            this.CBgeneros.Size = new System.Drawing.Size(158, 23);
+            this.CBgeneros.TabIndex = 2;
+            this.CBgeneros.SelectedIndexChanged += new System.EventHandler(this.CBgeneros_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(45, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 15);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Seleccione un mes:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(30, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(123, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Seleccione un género:";
+            // 
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(738, 469);
@@ -163,14 +172,6 @@
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // DTPmes
-            // 
-            this.DTPmes.Location = new System.Drawing.Point(159, 87);
-            this.DTPmes.Name = "DTPmes";
-            this.DTPmes.Size = new System.Drawing.Size(134, 23);
-            this.DTPmes.TabIndex = 6;
-            this.DTPmes.ValueChanged += new System.EventHandler(this.DTPmes_ValueChanged);
             // 
             // consulta_funciones_mas_vendidas
             // 
