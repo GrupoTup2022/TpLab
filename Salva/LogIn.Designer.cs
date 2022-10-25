@@ -36,6 +36,7 @@
             this.LblPass = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.MaskedTextBox();
             this.TxtPass = new System.Windows.Forms.MaskedTextBox();
+            this.lblNoValido = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxPP)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Iniciar Sesion";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblUser
             // 
@@ -123,6 +125,16 @@
             this.TxtPass.TabIndex = 10;
             this.TxtPass.UseSystemPasswordChar = true;
             // 
+            // lblNoValido
+            // 
+            this.lblNoValido.AutoSize = true;
+            this.lblNoValido.ForeColor = System.Drawing.Color.Red;
+            this.lblNoValido.Location = new System.Drawing.Point(121, 462);
+            this.lblNoValido.Name = "lblNoValido";
+            this.lblNoValido.Size = new System.Drawing.Size(387, 20);
+            this.lblNoValido.TabIndex = 11;
+            this.lblNoValido.Text = "Se ha proporcionado un usuario o contraseña incorrectos";
+            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -130,6 +142,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(621, 580);
+            this.Controls.Add(this.lblNoValido);
             this.Controls.Add(this.TxtPass);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.LblPass);
@@ -140,6 +153,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LogIn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogIn";
             this.Load += new System.EventHandler(this.LogIn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -159,5 +173,6 @@
         private Label LblPass;
         private MaskedTextBox txtUser;
         private MaskedTextBox TxtPass;
+        private Label lblNoValido;
     }
 }
