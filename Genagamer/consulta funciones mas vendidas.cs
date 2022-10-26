@@ -221,5 +221,10 @@ order by 1 desc  ");
                 txtCantidadTickets.Text = cantidad.ToString();
             }
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -93,7 +93,7 @@
             // 
             this.cboGeneros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboGeneros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGeneros.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cboGeneros.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cboGeneros.FormattingEnabled = true;
             this.cboGeneros.Location = new System.Drawing.Point(570, 97);
             this.cboGeneros.Name = "cboGeneros";
@@ -105,7 +105,7 @@
             // 
             this.cboSalas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSalas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSalas.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cboSalas.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cboSalas.FormattingEnabled = true;
             this.cboSalas.Items.AddRange(new object[] {
             "Todos"});

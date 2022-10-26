@@ -229,7 +229,7 @@
             this.Controls.Add(this.dtpHasta);
             this.Controls.Add(this.dtpDesde);
             this.Name = "ConsultaComprobante";
-            this.Text = "ConsultaComprobante";
+            this.Text = "Consulta Comprobantes";
             this.Load += new System.EventHandler(this.ConsultaComprobante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTotalYear1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprobante)).EndInit();

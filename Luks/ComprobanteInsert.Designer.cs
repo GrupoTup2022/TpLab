@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComprobanteInsert));
             this.dgv_tickets = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salaticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,15 +68,21 @@
             this.label10 = new System.Windows.Forms.Label();
             this.butacaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Butacas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_tickets
             // 
             this.dgv_tickets.AllowUserToAddRows = false;
             this.dgv_tickets.AllowUserToDeleteRows = false;
+            this.dgv_tickets.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_tickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_tickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn2,
@@ -163,7 +170,7 @@
             // cbo_peli
             // 
             this.cbo_peli.FormattingEnabled = true;
-            this.cbo_peli.Location = new System.Drawing.Point(136, 69);
+            this.cbo_peli.Location = new System.Drawing.Point(176, 73);
             this.cbo_peli.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_peli.Name = "cbo_peli";
             this.cbo_peli.Size = new System.Drawing.Size(138, 28);
@@ -193,7 +200,7 @@
             // cbo_audio
             // 
             this.cbo_audio.FormattingEnabled = true;
-            this.cbo_audio.Location = new System.Drawing.Point(136, 124);
+            this.cbo_audio.Location = new System.Drawing.Point(176, 128);
             this.cbo_audio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_audio.Name = "cbo_audio";
             this.cbo_audio.Size = new System.Drawing.Size(138, 28);
@@ -203,7 +210,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 73);
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(97, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 20);
             this.label1.TabIndex = 5;
@@ -212,7 +220,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 128);
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(102, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 20);
             this.label2.TabIndex = 6;
@@ -221,6 +230,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label3.Location = new System.Drawing.Point(355, 24);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 20);
@@ -230,6 +240,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label4.Location = new System.Drawing.Point(377, 73);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 20);
@@ -238,7 +249,8 @@
             // 
             // dtp_fecha
             // 
-            this.dtp_fecha.Location = new System.Drawing.Point(136, 16);
+            this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecha.Location = new System.Drawing.Point(176, 20);
             this.dtp_fecha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtp_fecha.Name = "dtp_fecha";
             this.dtp_fecha.Size = new System.Drawing.Size(138, 27);
@@ -248,7 +260,8 @@
             // lbl_fecha
             // 
             this.lbl_fecha.AutoSize = true;
-            this.lbl_fecha.Location = new System.Drawing.Point(69, 24);
+            this.lbl_fecha.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbl_fecha.Location = new System.Drawing.Point(109, 28);
             this.lbl_fecha.Name = "lbl_fecha";
             this.lbl_fecha.Size = new System.Drawing.Size(50, 20);
             this.lbl_fecha.TabIndex = 10;
@@ -258,6 +271,7 @@
             // 
             this.dgv_Butacas.AllowUserToAddRows = false;
             this.dgv_Butacas.AllowUserToDeleteRows = false;
+            this.dgv_Butacas.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgv_Butacas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Butacas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.A,
@@ -318,6 +332,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label5.Location = new System.Drawing.Point(346, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 20);
@@ -346,25 +361,29 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Alef", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label6.Location = new System.Drawing.Point(45, 185);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 20);
+            this.label6.Size = new System.Drawing.Size(60, 20);
             this.label6.TabIndex = 15;
             this.label6.Text = "Butaca:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Alef", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label7.Location = new System.Drawing.Point(637, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 20);
+            this.label7.Size = new System.Drawing.Size(61, 20);
             this.label7.TabIndex = 16;
             this.label7.Text = "Tickets:";
             // 
             // cbo_FormasVenta
             // 
             this.cbo_FormasVenta.FormattingEnabled = true;
-            this.cbo_FormasVenta.Location = new System.Drawing.Point(463, 541);
+            this.cbo_FormasVenta.Location = new System.Drawing.Point(441, 557);
             this.cbo_FormasVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbo_FormasVenta.Name = "cbo_FormasVenta";
             this.cbo_FormasVenta.Size = new System.Drawing.Size(138, 28);
@@ -373,51 +392,58 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(355, 547);
+            this.label8.Font = new System.Drawing.Font("Alef", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label8.Location = new System.Drawing.Point(434, 532);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 20);
+            this.label8.Size = new System.Drawing.Size(145, 24);
             this.label8.TabIndex = 19;
             this.label8.Text = "Forma de Venta:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(115, 548);
+            this.label9.Font = new System.Drawing.Font("Alef", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label9.Location = new System.Drawing.Point(181, 536);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(109, 20);
+            this.label9.Size = new System.Drawing.Size(133, 24);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Forma de Pago";
+            this.label9.Text = "Agregar forma ";
             // 
             // btn_comprobante
             // 
-            this.btn_comprobante.Location = new System.Drawing.Point(749, 529);
+            this.btn_comprobante.Image = global::TpLab.Properties.Resources.okPNG64;
+            this.btn_comprobante.Location = new System.Drawing.Point(810, 532);
             this.btn_comprobante.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_comprobante.Name = "btn_comprobante";
-            this.btn_comprobante.Size = new System.Drawing.Size(102, 55);
+            this.btn_comprobante.Size = new System.Drawing.Size(70, 55);
             this.btn_comprobante.TabIndex = 22;
-            this.btn_comprobante.Text = "Terminar Comprobante";
             this.btn_comprobante.UseVisualStyleBackColor = true;
             this.btn_comprobante.Click += new System.EventHandler(this.btn_comprobante_Click);
             // 
             // btn_cancelar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(11, 543);
+            this.btn_cancelar.BackColor = System.Drawing.Color.Red;
+            this.btn_cancelar.Font = new System.Drawing.Font("Alef", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelar.Location = new System.Drawing.Point(12, 552);
             this.btn_cancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(86, 31);
+            this.btn_cancelar.Size = new System.Drawing.Size(107, 39);
             this.btn_cancelar.TabIndex = 23;
             this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.UseVisualStyleBackColor = false;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_pagos
             // 
-            this.btn_pagos.Location = new System.Drawing.Point(222, 529);
+            this.btn_pagos.Image = global::TpLab.Properties.Resources.plus64;
+            this.btn_pagos.Location = new System.Drawing.Point(307, 534);
             this.btn_pagos.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_pagos.Name = "btn_pagos";
-            this.btn_pagos.Size = new System.Drawing.Size(97, 55);
+            this.btn_pagos.Size = new System.Drawing.Size(54, 50);
             this.btn_pagos.TabIndex = 24;
-            this.btn_pagos.Text = "Agregar Pagos";
             this.btn_pagos.UseVisualStyleBackColor = true;
             this.btn_pagos.Click += new System.EventHandler(this.btn_pagos_Click);
             // 
@@ -434,6 +460,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label10.Location = new System.Drawing.Point(360, 119);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 20);
@@ -454,11 +481,46 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 125;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Alef", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label11.Location = new System.Drawing.Point(232, 560);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 24);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "de pago";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TpLab.Properties.Resources.LogoPng;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 69);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(541, 451);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 69);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 29;
+            this.pictureBox2.TabStop = false;
+            // 
             // ComprobanteInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cbo_promos);
             this.Controls.Add(this.btn_pagos);
@@ -485,11 +547,12 @@
             this.Controls.Add(this.dgv_tickets);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ComprobanteInsert";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.ComprobanteInsert_Load);
+            this.Text = "Insertar Comprobante";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Butacas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -538,5 +601,8 @@
         private DataGridViewTextBoxColumn Descuentoticket;
         private DataGridViewTextBoxColumn NombrePromo;
         private DataGridViewTextBoxColumn PrecioTicket;
+        private Label label11;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }
