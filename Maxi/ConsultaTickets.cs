@@ -50,7 +50,7 @@ namespace TpLab.Maxi
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            string Consulta = "select t.nro_ticket 'TICKET', titulo_local 'PELICULA' ,genero 'GENERO', s.descripcion 'SALA',p.descripcion 'PROMO', t.[Precio] 'PRECIO'\r\n, nro_butaca 'BUTACA', id_comprobante 'COMPROBANTE'\r\nfrom Ticket_Precio t join Funciones as f on f.id_funcion = t.id_funcion\r\njoin Peliculas as p on f.id_pelicula = p.id_pelicula\r\njoin Butacas as b on b.id_butaca = t.id_butaca\r\njoin Salas s on s.id_sala = b.id_sala\r\njoin Peliculas_Generos pg on p.id_pelicula = pg.id_pelicula\r\njoin Generos g on pg.id_genero = g.id_genero ";
+            string Consulta = "select distinct t.nro_ticket 'TICKET', p.titulo_local 'PELICULA' , s.descripcion 'SALA', t.[Precio] 'PRECIO'\r\n, nro_butaca 'BUTACA', id_comprobante 'COMPROBANTE'\r\nfrom Ticket_Precio t join Funciones as f on f.id_funcion = t.id_funcion\r\njoin Peliculas as p on f.id_pelicula = p.id_pelicula\r\njoin Butacas as b on b.id_butaca = t.id_butaca\r\njoin Salas s on s.id_sala = b.id_sala\r\njoin Peliculas_Generos pg on p.id_pelicula = pg.id_pelicula\r\njoin Generos g on pg.id_genero = g.id_genero ";
             DateTime desde = dtpDesde.Value;
             DateTime hasta = dtpHasta.Value;
             string Sala = cboSalas.Text;
@@ -65,7 +65,8 @@ namespace TpLab.Maxi
             {
                Consulta += " and s.descripcion like '" + Sala + "'";
             }
-            
+
+            Consulta += "order by 1";
                 
             CargarDGV(Consulta);
 
