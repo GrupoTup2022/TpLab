@@ -69,7 +69,7 @@
             this.groupBox1.Size = new System.Drawing.Size(649, 451);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "5 peliculas mas vistas según el mes y género:";
+            this.groupBox1.Text = "5 peliculas mas vistas según el mes y género de este año:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // CBmes
