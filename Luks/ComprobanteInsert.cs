@@ -353,5 +353,10 @@ namespace TpLab.Luks
             MessageBox.Show("Se ingresó el comprobante: "+nroC+" al sistema");
             this.Close();
         }
+
+        private void ComprobanteInsert_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
