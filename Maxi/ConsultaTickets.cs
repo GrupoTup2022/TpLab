@@ -21,8 +21,8 @@ namespace TpLab.Maxi
 
         private void ConsultaTickets_Load(object sender, EventArgs e)
         {
-           
-            //CargarCombo("select * from Generos",cboGeneros);
+            
+            CargarCombo("select * from Generos",cboGeneros);           
             CargarCombo("select id_sala, descripcion from salas",cboSalas);
             
 
@@ -37,8 +37,12 @@ namespace TpLab.Maxi
         {
             DataTable dt = Consultas.consultarTabla(Consulta);
             cbo.DataSource = dt;
-            cbo.DisplayMember = dt.Columns[1].ColumnName;
             cbo.ValueMember = dt.Columns[0].ColumnName;
+            dt.Rows.Add(22, "Todos");
+            cbo.DisplayMember = dt.Columns[1].ColumnName;
+       
+
+           
             cbo.DropDownStyle = ComboBoxStyle.DropDownList;
             cbo.SelectedIndex = -1;
             
@@ -56,7 +60,7 @@ namespace TpLab.Maxi
             if (cboGeneros.Text != "Todos") 
             { 
                 Consulta += " and genero like '" + Genero + "' ";
-            }
+            }                            
             if(cboSalas.Text != "Todos")
             {
                Consulta += " and s.descripcion like '" + Sala + "'";
