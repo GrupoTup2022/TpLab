@@ -38,6 +38,7 @@
             // 
             // DGVTotalSalaMes
             // 
+            this.DGVTotalSalaMes.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DGVTotalSalaMes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVTotalSalaMes.Location = new System.Drawing.Point(24, 80);
             this.DGVTotalSalaMes.Name = "DGVTotalSalaMes";
@@ -49,6 +50,7 @@
             // 
             // DGVVentaSalaThisYear
             // 
+            this.DGVVentaSalaThisYear.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DGVVentaSalaThisYear.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVVentaSalaThisYear.Location = new System.Drawing.Point(651, 80);
             this.DGVVentaSalaThisYear.Name = "DGVVentaSalaThisYear";
@@ -60,18 +62,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 32);
+            this.label1.Font = new System.Drawing.Font("Alef", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(77, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 20);
+            this.label1.Size = new System.Drawing.Size(453, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "Monto total facturado por sala y por mes";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(763, 32);
+            this.label2.Font = new System.Drawing.Font("Alef", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label2.Location = new System.Drawing.Point(668, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(331, 20);
+            this.label2.Size = new System.Drawing.Size(523, 31);
             this.label2.TabIndex = 4;
             this.label2.Text = "Cantidad de entradas vendidas por sala este año";
             // 
@@ -79,13 +85,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1232, 496);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(1250, 496);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DGVVentaSalaThisYear);
             this.Controls.Add(this.DGVTotalSalaMes);
             this.Name = "FormEstadistico";
-            this.Text = "FormEstadistico";
+            this.Text = "Estadisticas";
             this.Load += new System.EventHandler(this.FormEstadistico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVTotalSalaMes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVVentaSalaThisYear)).EndInit();
