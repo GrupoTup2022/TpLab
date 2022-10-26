@@ -33,6 +33,7 @@
             this.consultaGenaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insertarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.datosEstadisticosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,8 @@
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultaGenaToolStripMenuItem});
+            this.consultaGenaToolStripMenuItem,
+            this.datosEstadisticosToolStripMenuItem});
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
             this.consultaToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.consultaToolStripMenuItem.Text = "Consulta ";
@@ -79,6 +81,13 @@
             this.ticketToolStripMenuItem.Text = "Ticket";
             this.ticketToolStripMenuItem.Click += new System.EventHandler(this.ticketToolStripMenuItem_Click);
             // 
+            // datosEstadisticosToolStripMenuItem
+            // 
+            this.datosEstadisticosToolStripMenuItem.Name = "datosEstadisticosToolStripMenuItem";
+            this.datosEstadisticosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.datosEstadisticosToolStripMenuItem.Text = "Datos Estadisticos";
+            this.datosEstadisticosToolStripMenuItem.Click += new System.EventHandler(this.datosEstadisticosToolStripMenuItem_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -104,8 +113,6 @@
         private ToolStripMenuItem insertarToolStripMenuItem;
         private ToolStripMenuItem ticketToolStripMenuItem;
         private ToolStripMenuItem consultaGenaToolStripMenuItem;
-=======
-        private ToolStripMenuItem consultaMaxiToolStripMenuItem;
->>>>>>> 16f9bb249a12b4e289b48bca6920f5f7070925c8
+        private ToolStripMenuItem datosEstadisticosToolStripMenuItem;
     }
 }

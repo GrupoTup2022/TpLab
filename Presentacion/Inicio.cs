@@ -41,16 +41,9 @@ namespace TpLab.Presentacion
             ConsultaFuncion.Show();
         }
 
-<<<<<<< HEAD
         private void datosEstadisticosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormEstadistico().ShowDialog();
-=======
-        private void consultaMaxiToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            TpLab.Maxi.ConsultaTickets consulta = new Maxi.ConsultaTickets();
-            consulta.Show();
->>>>>>> 16f9bb249a12b4e289b48bca6920f5f7070925c8
         }
     }
 }
