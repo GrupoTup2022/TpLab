@@ -50,7 +50,7 @@
             // 
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsultar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnConsultar.Font = new System.Drawing.Font("Alef", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnConsultar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnConsultar.Location = new System.Drawing.Point(961, 61);
             this.btnConsultar.Name = "btnConsultar";
@@ -94,14 +94,11 @@
             this.cboGeneros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGeneros.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cboGeneros.FormattingEnabled = true;
-            this.cboGeneros.Items.AddRange(new object[] {
-            "Todos",
-            "Accion"});
             this.cboGeneros.Location = new System.Drawing.Point(570, 97);
             this.cboGeneros.Name = "cboGeneros";
             this.cboGeneros.Size = new System.Drawing.Size(138, 31);
             this.cboGeneros.TabIndex = 2;
-            this.cboGeneros.Tag = "Todos";
+            this.cboGeneros.Tag = "";
             // 
             // cboSalas
             // 
@@ -121,11 +118,11 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Miriam Libre", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Location = new System.Drawing.Point(217, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 33);
+            this.label1.Size = new System.Drawing.Size(93, 29);
             this.label1.TabIndex = 4;
             this.label1.Text = "Desde:";
             // 
@@ -133,11 +130,11 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Miriam Libre", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Location = new System.Drawing.Point(592, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 33);
+            this.label2.Size = new System.Drawing.Size(96, 29);
             this.label2.TabIndex = 5;
             this.label2.Text = "Genero";
             // 
@@ -145,11 +142,11 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Miriam Libre", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label3.Location = new System.Drawing.Point(413, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 33);
+            this.label3.Size = new System.Drawing.Size(79, 29);
             this.label3.TabIndex = 6;
             this.label3.Text = "Hasta";
             // 
@@ -157,11 +154,11 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Miriam Libre", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label4.Location = new System.Drawing.Point(791, 61);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 33);
+            this.label4.Size = new System.Drawing.Size(64, 29);
             this.label4.TabIndex = 7;
             this.label4.Text = "Sala";
             // 
@@ -223,7 +220,7 @@
             this.Controls.Add(this.dgvConsultaTickets);
             this.Name = "ConsultaTickets";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ConsultaTickets";
+            this.Text = "Consultar Tickets";
             this.Load += new System.EventHandler(this.ConsultaTickets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaTickets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
