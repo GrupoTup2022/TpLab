@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TpLab.datos;
 using TpLab.Genagamer;
-using TpLab.Nicolas;
 
 namespace TpLab.Presentacion
 {
@@ -41,9 +40,10 @@ namespace TpLab.Presentacion
             ConsultaFuncion.Show();
         }
 
-        private void datosEstadisticosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void consultaMaxiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormEstadistico().ShowDialog();
+            TpLab.Maxi.ConsultaTickets consulta = new Maxi.ConsultaTickets();
+            consulta.Show();
         }
     }
 }

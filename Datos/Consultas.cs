@@ -56,7 +56,7 @@ namespace TpLab.datos
                                 FROM Comprobantes c join Tickets t1 on
                                 c.id_comprobante = t1.id_comprobante
                                 WHERE datediff(month, fecha, GETDATE())=1)
-                                GROUP BY f.id_funcion, f.id_pelicula
+                                GROUP BY f.id_funcion, f.id_pelicula,p.titulo_original
                                 ORDER BY 1 desc";
             return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
         }
@@ -135,6 +135,42 @@ namespace TpLab.datos
             param.Add(new Parametro("@id_comprobante", id_comprobante));
             param.Add(new Parametro("@id_promo", id_promo));
             return HelperDB.ObtenerInstancia().ConsultaEscalarSQLConParams(commando, param, "@nro_ticket");
+        }
+        public static int insertar_comprobante(string id_forma_venta)
+        {
+            /* string commando = @"--PROCEDIMIENTO ALMACENADO para ingresar tickets
+                                 CREATE PROC SP_INSERTAR_COMPROBANTE
+                                 @id_forma_venta int,
+                                 @id_comprobante int output
+                                 AS
+                                 BEGIN
+                                 INSERT INTO Comprobantes (id_forma_venta, fecha)
+                                 values (@id_forma_venta, GETDATE())
+                                 SET @id_comprobante = SCOPE_IDENTITY();
+                                 END";*/
+            string commando = "SP_INSERTAR_COMPROBANTE";
+            List<Parametro> param = new List<Parametro>();
+            param.Add(new Parametro("@id_forma_venta", id_forma_venta));
+            return HelperDB.ObtenerInstancia().ConsultaEscalarSQLConParams(commando, param, "@id_comprobante");
+        }
+        public static int insertar_fp(string id_forma_pago,string id_comprobante,string importe)
+        {
+            /* string commando = @"--PROCEDIMIENTO ALMACENADO para ingresar tickets
+                                 CREATE PROC SP_INSERTAR_PAGOS
+                                 @id_forma_pago int,
+                                 @id_comprobante int,
+                                 @importe int
+                                 AS
+                                 BEGIN
+                                 INSERT INTO Comprobantes_Formas_pago (id_forma_pago, id_comprobante,importe)
+                                 values (@id_forma_pago,@id_comprobante,@importe)
+                                 END";*/
+            string commando = "SP_INSERTAR_COMPROBANTE";
+            List<Parametro> param = new List<Parametro>();
+            param.Add(new Parametro("@id_forma_pago", id_forma_pago));
+            param.Add(new Parametro("@id_comprobante", id_comprobante));
+            param.Add(new Parametro("@importe", importe));
+            return HelperDB.ObtenerInstancia().EjecutarSQL(commando, param);
         }
         public static DataTable funcion(string id_funcion)
         {

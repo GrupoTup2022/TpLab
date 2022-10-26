@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LibreriaTp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,12 +24,37 @@ namespace TpLab.Genagamer
             CBgeneros.SelectedIndex = -1;
             CBgeneros.DropDownStyle = ComboBoxStyle.DropDownList;
 
-            DTPmes.Format = DateTimePickerFormat.Custom;
-            DTPmes.CustomFormat = "MM/yyyy";
+            CBmes.SelectedIndex = -1;
+            CBmes.DropDownStyle = ComboBoxStyle.DropDownList;
+
             cargarGeneros();
+            cargarMeses();
+
+           
 
 
 
+
+
+        }
+        private void cargarMeses()
+        {
+
+             
+            CBmes.Items.Add("Enero");
+            CBmes.Items.Add("Febrero");
+            CBmes.Items.Add("Marzo");
+            CBmes.Items.Add("Abril");
+            CBmes.Items.Add("Mayo");
+            CBmes.Items.Add("Junio");
+            CBmes.Items.Add("Julio");
+            CBmes.Items.Add("Agosto");
+            CBmes.Items.Add("Septiembre");
+            CBmes.Items.Add("Octubre");
+            CBmes.Items.Add("Noviembre");
+            
+
+            CBmes.Items.Add("Diciembre");
 
 
         }
@@ -49,6 +75,10 @@ namespace TpLab.Genagamer
             {
                 MessageBox.Show("Seleccione un genero");
                 estado = false;
+            }else if(CBmes.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un mes");
+                estado = false;
             }
             return estado;
                 
@@ -67,6 +97,105 @@ namespace TpLab.Genagamer
         }
 
         private void CBgeneros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CBmes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea salir?", "saliendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Dispose();
+        }
+
+        private void btn_consultar_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            if (ValidarDatos())
+            {
+                int id_genero = Convert.ToInt32( CBgeneros.SelectedValue.ToString());
+                int mes = CBmes.SelectedIndex + 1;
+
+
+
+                DataTable TablaPeliculas = Consultas.consultarTabla(@"  SELECT TOP 5 count(nro_ticket)'Funciones Vendidas',f.id_funcion ,p.titulo_original as titulo,f.fecha,g.genero,s.id_sala
+                                FROM Tickets t join Funciones f on t.id_funcion = f.id_funcion
+                                join Peliculas p on f.id_pelicula = p.id_pelicula
+                                join salas s on f.id_sala = s.id_sala
+                                join peliculas_generos pg on p.id_pelicula = pg.id_pelicula
+                                join generos g on pg.id_genero = g.id_genero
+                                WHERE f.id_funcion in (SELECT  id_funcion
+                                FROM Comprobantes c join Tickets t1 on
+                                c.id_comprobante = t1.id_comprobante
+                                WHERE month(fecha) ="+mes+ "and g.id_genero = "+id_genero+
+                                "GROUP BY f.id_funcion,p.titulo_original,f.fecha,g.genero,s.id_sala order by 1 desc )");
+
+               
+
+                foreach ( DataRow row in TablaPeliculas.Rows)
+                {
+                    int id_funcion = Convert.ToInt32(row["funcion"]);
+
+                    string fecha = row["fecha"].ToString();
+                    string tituloPelicula = row["titulo"].ToString();
+                    string generoPelicula = row["genero"].ToString();
+                    int sala = Convert.ToInt32(row["id_sala"]);
+
+
+
+
+
+
+
+                    dataGridView1.Rows.Add(id_funcion.ToString(),fecha, tituloPelicula,generoPelicula, sala.ToString());
+                    
+
+                }
+
+
+
+
+                //select top 5 count(t.nro_ticket),f.id_funcion,p.fecha_estreno,p.titulo_original,g.genero,s.id_sala
+                //                                                        from funciones f join peliculas p on f.id_pelicula = p.id_pelicula
+                //                                                         join tickets t on f.id_funcion = t.id_funcion
+                //                                                          join salas s on f.id_sala = s.id_sala
+                //                                                            join peliculas_generos pg on p.id_pelicula = pg.id_pelicula
+                //                                                              join generos g on pg.id_genero = g.id_genero
+                //group by f.id_funcion,p.fecha_estreno,p.titulo_original,g.genero,s.id_sala order by 1 desc
+                //                                                      where exists(select top 5 count(tickets.nro_ticket),id_funcion from tickets where f.id_funcion = tickets.id_funcion group by id_funcion order by 1 desc ) and month(p.fecha_estreno) = " + mes + " and g.id_genero = " + id_genero + " group by f.id_funcion,p.fecha_estreno,p.titulo_original,g.genero,s.id_sala order by 1 desc
+
+                //for (int i = 0; i < TablaPeliculas.Rows.Count; i++)
+                //{
+                //    int id_funcion = Convert.ToInt32(TablaPeliculas.Rows[i]["id_funcion"]);
+                //    string fecha = TablaPeliculas.Rows[i]["fecha_estreno"].ToString();
+                //    string tituloPelicula = TablaPeliculas.Rows[i]["titulo_original"].ToString();
+                //    string generoPelicula = TablaPeliculas.Rows[i]["genero"].ToString();
+                //    int sala = Convert.ToInt32(TablaPeliculas.Rows[i]["id_sala"]);
+
+
+
+
+
+
+
+                //    dataGridView1.Rows.Add(id_funcion.ToString(), fecha, tituloPelicula, generoPelicula, sala.ToString());
+
+                //}
+
+
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

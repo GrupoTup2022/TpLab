@@ -30,21 +30,24 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.DTPmes = new System.Windows.Forms.DateTimePicker();
+            this.CBmes = new System.Windows.Forms.ComboBox();
             this.btn_consultar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.funcionCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tituloPeliculaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generoCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CBgeneros = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnConsultarTickets = new System.Windows.Forms.Button();
+            this.txtCantidadTickets = new System.Windows.Forms.TextBox();
+            this.idCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloPeliculaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generoCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -57,7 +60,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DTPmes);
+            this.groupBox1.Controls.Add(this.CBmes);
             this.groupBox1.Controls.Add(this.btn_consultar);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.CBgeneros);
@@ -68,16 +71,17 @@
             this.groupBox1.Size = new System.Drawing.Size(841, 451);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Funciones más vendidas según el mes y género:";
+            this.groupBox1.Text = "5 Funciones más vendidas según el mes y género:";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // DTPmes
+            // CBmes
             // 
-            this.DTPmes.Location = new System.Drawing.Point(159, 87);
-            this.DTPmes.Name = "DTPmes";
-            this.DTPmes.Size = new System.Drawing.Size(134, 23);
-            this.DTPmes.TabIndex = 6;
-            this.DTPmes.ValueChanged += new System.EventHandler(this.DTPmes_ValueChanged);
+            this.CBmes.FormattingEnabled = true;
+            this.CBmes.Location = new System.Drawing.Point(159, 90);
+            this.CBmes.Name = "CBmes";
+            this.CBmes.Size = new System.Drawing.Size(133, 23);
+            this.CBmes.TabIndex = 6;
+            this.CBmes.SelectedIndexChanged += new System.EventHandler(this.CBmes_SelectedIndexChanged);
             // 
             // btn_consultar
             // 
@@ -87,6 +91,7 @@
             this.btn_consultar.TabIndex = 5;
             this.btn_consultar.Text = "CONSULTAR";
             this.btn_consultar.UseVisualStyleBackColor = true;
+            this.btn_consultar.Click += new System.EventHandler(this.btn_consultar_Click);
             // 
             // dataGridView1
             // 
@@ -95,47 +100,15 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCLM,
             this.fechaCLM,
-            this.funcionCLM,
             this.tituloPeliculaCLM,
             this.generoCLM,
             this.salaCLM});
             this.dataGridView1.Location = new System.Drawing.Point(19, 179);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(793, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(695, 236);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // idCLM
-            // 
-            this.idCLM.HeaderText = "id";
-            this.idCLM.Name = "idCLM";
-            // 
-            // fechaCLM
-            // 
-            this.fechaCLM.HeaderText = "Fecha";
-            this.fechaCLM.Name = "fechaCLM";
-            // 
-            // funcionCLM
-            // 
-            this.funcionCLM.HeaderText = "Funcion";
-            this.funcionCLM.Name = "funcionCLM";
-            // 
-            // tituloPeliculaCLM
-            // 
-            this.tituloPeliculaCLM.HeaderText = "Titulo de la pelicula";
-            this.tituloPeliculaCLM.Name = "tituloPeliculaCLM";
-            this.tituloPeliculaCLM.Width = 200;
-            // 
-            // generoCLM
-            // 
-            this.generoCLM.HeaderText = "Genero de la pelicula";
-            this.generoCLM.Name = "generoCLM";
-            this.generoCLM.Width = 150;
-            // 
-            // salaCLM
-            // 
-            this.salaCLM.HeaderText = "Sala";
-            this.salaCLM.Name = "salaCLM";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // CBgeneros
             // 
@@ -166,18 +139,75 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(738, 469);
+            this.btnCancelar.Location = new System.Drawing.Point(1029, 465);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(121, 23);
             this.btnCancelar.TabIndex = 6;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnConsultarTickets);
+            this.groupBox2.Controls.Add(this.txtCantidadTickets);
+            this.groupBox2.Location = new System.Drawing.Point(876, 191);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox2.Size = new System.Drawing.Size(274, 115);
+            this.groupBox2.TabIndex = 7;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cantidad de tickets vendidos el año pasado de genero accion";
+            // 
+            // btnConsultarTickets
+            // 
+            this.btnConsultarTickets.Location = new System.Drawing.Point(85, 86);
+            this.btnConsultarTickets.Name = "btnConsultarTickets";
+            this.btnConsultarTickets.Size = new System.Drawing.Size(100, 23);
+            this.btnConsultarTickets.TabIndex = 7;
+            this.btnConsultarTickets.Text = "CONSULTAR";
+            this.btnConsultarTickets.UseVisualStyleBackColor = true;
+            // 
+            // txtCantidadTickets
+            // 
+            this.txtCantidadTickets.Location = new System.Drawing.Point(85, 45);
+            this.txtCantidadTickets.Name = "txtCantidadTickets";
+            this.txtCantidadTickets.Size = new System.Drawing.Size(100, 23);
+            this.txtCantidadTickets.TabIndex = 0;
+            // 
+            // idCLM
+            // 
+            this.idCLM.HeaderText = "id";
+            this.idCLM.Name = "idCLM";
+            // 
+            // fechaCLM
+            // 
+            this.fechaCLM.HeaderText = "Fecha";
+            this.fechaCLM.Name = "fechaCLM";
+            // 
+            // tituloPeliculaCLM
+            // 
+            this.tituloPeliculaCLM.HeaderText = "Titulo de la pelicula";
+            this.tituloPeliculaCLM.Name = "tituloPeliculaCLM";
+            this.tituloPeliculaCLM.Width = 200;
+            // 
+            // generoCLM
+            // 
+            this.generoCLM.HeaderText = "Genero de la pelicula";
+            this.generoCLM.Name = "generoCLM";
+            this.generoCLM.Width = 150;
+            // 
+            // salaCLM
+            // 
+            this.salaCLM.HeaderText = "Sala";
+            this.salaCLM.Name = "salaCLM";
             // 
             // consulta_funciones_mas_vendidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(897, 500);
+            this.ClientSize = new System.Drawing.Size(1162, 500);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -187,6 +217,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,16 +230,18 @@
         private GroupBox groupBox1;
         private Button btn_consultar;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idCLM;
-        private DataGridViewTextBoxColumn fechaCLM;
-        private DataGridViewTextBoxColumn funcionCLM;
-        private DataGridViewTextBoxColumn tituloPeliculaCLM;
-        private DataGridViewTextBoxColumn generoCLM;
-        private DataGridViewTextBoxColumn salaCLM;
         private ComboBox CBgeneros;
         private Label label3;
         private Label label2;
         private Button btnCancelar;
-        private DateTimePicker DTPmes;
+        private ComboBox CBmes;
+        private GroupBox groupBox2;
+        private TextBox txtCantidadTickets;
+        private Button btnConsultarTickets;
+        private DataGridViewTextBoxColumn idCLM;
+        private DataGridViewTextBoxColumn fechaCLM;
+        private DataGridViewTextBoxColumn tituloPeliculaCLM;
+        private DataGridViewTextBoxColumn generoCLM;
+        private DataGridViewTextBoxColumn salaCLM;
     }
 }

@@ -52,10 +52,21 @@
             this.cbo_FormasVenta = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btn_ticket = new System.Windows.Forms.Button();
             this.btn_comprobante = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_pagos = new System.Windows.Forms.Button();
+            this.cbo_promos = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.butacaID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horarioticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PreciosinDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuentoticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Butacas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cant)).BeginInit();
@@ -66,12 +77,22 @@
             this.dgv_tickets.AllowUserToAddRows = false;
             this.dgv_tickets.AllowUserToDeleteRows = false;
             this.dgv_tickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_tickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.salaticket,
+            this.horarioticket,
+            this.tituloTicket,
+            this.PreciosinDescuento,
+            this.Descuentoticket,
+            this.NombrePromo,
+            this.PrecioTicket});
             this.dgv_tickets.Location = new System.Drawing.Point(557, 39);
             this.dgv_tickets.Name = "dgv_tickets";
             this.dgv_tickets.ReadOnly = true;
             this.dgv_tickets.RowTemplate.Height = 25;
             this.dgv_tickets.Size = new System.Drawing.Size(213, 352);
             this.dgv_tickets.TabIndex = 0;
+            this.dgv_tickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tickets_CellContentClick);
             // 
             // cbo_peli
             // 
@@ -214,7 +235,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(303, 96);
+            this.label5.Location = new System.Drawing.Point(303, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 15);
             this.label5.TabIndex = 13;
@@ -222,7 +243,7 @@
             // 
             // n_cant
             // 
-            this.n_cant.Location = new System.Drawing.Point(380, 93);
+            this.n_cant.Location = new System.Drawing.Point(380, 121);
             this.n_cant.Minimum = new decimal(new int[] {
             1,
             0,
@@ -282,23 +303,15 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Forma de Pago";
             // 
-            // btn_ticket
-            // 
-            this.btn_ticket.Location = new System.Drawing.Point(557, 397);
-            this.btn_ticket.Name = "btn_ticket";
-            this.btn_ticket.Size = new System.Drawing.Size(85, 41);
-            this.btn_ticket.TabIndex = 21;
-            this.btn_ticket.Text = "Agregar Ticket";
-            this.btn_ticket.UseVisualStyleBackColor = true;
-            // 
             // btn_comprobante
             // 
-            this.btn_comprobante.Location = new System.Drawing.Point(681, 397);
+            this.btn_comprobante.Location = new System.Drawing.Point(655, 397);
             this.btn_comprobante.Name = "btn_comprobante";
             this.btn_comprobante.Size = new System.Drawing.Size(89, 41);
             this.btn_comprobante.TabIndex = 22;
             this.btn_comprobante.Text = "Terminar Comprobante";
             this.btn_comprobante.UseVisualStyleBackColor = true;
+            this.btn_comprobante.Click += new System.EventHandler(this.btn_comprobante_Click);
             // 
             // btn_cancelar
             // 
@@ -318,16 +331,94 @@
             this.btn_pagos.TabIndex = 24;
             this.btn_pagos.Text = "Agregar Pagos";
             this.btn_pagos.UseVisualStyleBackColor = true;
+            this.btn_pagos.Click += new System.EventHandler(this.btn_pagos_Click);
+            // 
+            // cbo_promos
+            // 
+            this.cbo_promos.FormattingEnabled = true;
+            this.cbo_promos.Location = new System.Drawing.Point(380, 86);
+            this.cbo_promos.Name = "cbo_promos";
+            this.cbo_promos.Size = new System.Drawing.Size(121, 23);
+            this.cbo_promos.TabIndex = 25;
+            this.cbo_promos.SelectedIndexChanged += new System.EventHandler(this.cbo_promos_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(315, 89);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 15);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Promo:";
+            // 
+            // butacaID
+            // 
+            this.butacaID.HeaderText = "Numero Butaca";
+            this.butacaID.Name = "butacaID";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Numero de Butaca";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Numero de Butaca";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // salaticket
+            // 
+            this.salaticket.HeaderText = "Sala";
+            this.salaticket.Name = "salaticket";
+            this.salaticket.ReadOnly = true;
+            // 
+            // horarioticket
+            // 
+            this.horarioticket.HeaderText = "Horario";
+            this.horarioticket.Name = "horarioticket";
+            this.horarioticket.ReadOnly = true;
+            // 
+            // tituloTicket
+            // 
+            this.tituloTicket.HeaderText = "Titulo";
+            this.tituloTicket.Name = "tituloTicket";
+            this.tituloTicket.ReadOnly = true;
+            // 
+            // PreciosinDescuento
+            // 
+            this.PreciosinDescuento.HeaderText = "Precio sin descuento";
+            this.PreciosinDescuento.Name = "PreciosinDescuento";
+            this.PreciosinDescuento.ReadOnly = true;
+            // 
+            // Descuentoticket
+            // 
+            this.Descuentoticket.HeaderText = "Descuento";
+            this.Descuentoticket.Name = "Descuentoticket";
+            this.Descuentoticket.ReadOnly = true;
+            // 
+            // NombrePromo
+            // 
+            this.NombrePromo.HeaderText = "Promo";
+            this.NombrePromo.Name = "NombrePromo";
+            this.NombrePromo.ReadOnly = true;
+            // 
+            // PrecioTicket
+            // 
+            this.PrecioTicket.HeaderText = "PrecioFinal";
+            this.PrecioTicket.Name = "PrecioTicket";
+            this.PrecioTicket.ReadOnly = true;
             // 
             // ComprobanteInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.cbo_promos);
             this.Controls.Add(this.btn_pagos);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_comprobante);
-            this.Controls.Add(this.btn_ticket);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbo_FormasVenta);
@@ -388,5 +479,17 @@
         private DataGridViewCheckBoxColumn C;
         private DataGridViewCheckBoxColumn D;
         private DataGridViewCheckBoxColumn E;
+        private ComboBox cbo_promos;
+        private Label label10;
+        private DataGridViewTextBoxColumn butacaID;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn salaticket;
+        private DataGridViewTextBoxColumn horarioticket;
+        private DataGridViewTextBoxColumn tituloTicket;
+        private DataGridViewTextBoxColumn PreciosinDescuento;
+        private DataGridViewTextBoxColumn Descuentoticket;
+        private DataGridViewTextBoxColumn NombrePromo;
+        private DataGridViewTextBoxColumn PrecioTicket;
     }
 }
