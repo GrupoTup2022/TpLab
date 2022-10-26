@@ -187,14 +187,12 @@ namespace TpLab.Luks
 
         private void Fijar_butacas()
         {
-            for(int i=0;i<dgv_Butacas.Rows.Count;i++)
+            for(int i=0;i<dgv_Butacas.Rows.Count-1;i++)
             {
-                for (int j=0;j<dgv_Butacas.Rows[i].Cells.Count;j++)
+                for (int j=0;j<dgv_Butacas.Rows[i].Cells.Count-1;j++)
                 {
                     if ((Boolean)dgv_Butacas.Rows[i].Cells[j].Value)
-                    dgv_Butacas.Rows[i].Cells[j].ReadOnly = true;
-                    else
-                    dgv_Butacas.Rows[i].Cells[j].ReadOnly = false;
+                        dgv_Butacas.Rows[i].Cells[j].Style.BackColor = Color.LightGray;
                 }
             }
         }
@@ -301,7 +299,7 @@ namespace TpLab.Luks
                 dgv_tickets.Rows.Add( ticket.Butaca.Id,Funcion.Sala.Nombre,Funcion.Horario.Nombre, Funcion.Pelicula.Titulo_Local, Funcion.Precio,ticket.Promo.Porcentaje,ticket.Promo.Descripcion,ticket.Promo.Porcentaje*ticket.Funcion.Precio/100);
                 cant--;
             }
-            else if ((Boolean)dgv_Butacas.SelectedCells[0].Value == true && !dgv_Butacas.SelectedCells[0].ReadOnly)
+            else if ((Boolean)dgv_Butacas.SelectedCells[0].Value == true && dgv_Butacas.SelectedCells[0].Style.BackColor != Color.LightGray)
             {
                 dgv_Butacas.SelectedCells[0].Value = false;   
                 
