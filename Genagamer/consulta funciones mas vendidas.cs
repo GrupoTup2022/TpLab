@@ -30,8 +30,8 @@ namespace TpLab.Genagamer
             cargarGeneros();
             cargarMeses();
 
-           
 
+            txtCantidadTickets.Enabled = false;
 
 
 
@@ -122,41 +122,43 @@ namespace TpLab.Genagamer
             dataGridView1.Rows.Clear();
             if (ValidarDatos())
             {
-                int id_genero = Convert.ToInt32( CBgeneros.SelectedValue.ToString());
+                string genero = "'"+CBgeneros.Text+"'" ;
                 int mes = CBmes.SelectedIndex + 1;
 
 
 
-                DataTable TablaPeliculas = Consultas.consultarTabla(@"  SELECT TOP 5 count(nro_ticket)'Funciones Vendidas',f.id_funcion ,p.titulo_original as titulo,f.fecha,g.genero,s.id_sala
-                                FROM Tickets t join Funciones f on t.id_funcion = f.id_funcion
-                                join Peliculas p on f.id_pelicula = p.id_pelicula
-                                join salas s on f.id_sala = s.id_sala
-                                join peliculas_generos pg on p.id_pelicula = pg.id_pelicula
-                                join generos g on pg.id_genero = g.id_genero
-                                WHERE f.id_funcion in (SELECT  id_funcion
-                                FROM Comprobantes c join Tickets t1 on
-                                c.id_comprobante = t1.id_comprobante
-                                WHERE month(fecha) ="+mes+ "and g.id_genero = "+id_genero+
-                                "GROUP BY f.id_funcion,p.titulo_original,f.fecha,g.genero,s.id_sala order by 1 desc )");
+                DataTable TablaPeliculas = Consultas.consultarTabla(@"  select top 5 count(t.nro_ticket) as 'cantidad de ventas',f.id_pelicula,p.titulo_original,g.genero
+from peliculas p join funciones f on p.id_pelicula = f.id_pelicula
+join peliculas_generos pg on p.id_pelicula = pg.id_pelicula
+join generos g on pg.id_genero = g.id_genero
+join salas s on f.id_sala = s.id_sala
+join tickets t on f.id_funcion = t.id_funcion
+where month(f.fecha) =" + mes+ @"and year(f.fecha) = year(getdate())
+and "+ genero+@" in (select genero
+				from peliculas_generos pg1
+				join generos g1 on pg1.id_genero = g1.id_genero
+				where f.id_pelicula = pg1.id_pelicula
+				and g1.id_genero = g.id_genero)
+group by f.id_pelicula,p.titulo_original,g.genero
+order by 1 desc  ");
 
                
 
                 foreach ( DataRow row in TablaPeliculas.Rows)
                 {
-                    int id_funcion = Convert.ToInt32(row["funcion"]);
+                    int id_funcion = Convert.ToInt32(row["id_pelicula"]);
 
-                    string fecha = row["fecha"].ToString();
-                    string tituloPelicula = row["titulo"].ToString();
-                    string generoPelicula = row["genero"].ToString();
-                    int sala = Convert.ToInt32(row["id_sala"]);
-
-
+                    
+                    string tituloPelicula = row["titulo_original"].ToString();
+                   
+              
 
 
 
 
 
-                    dataGridView1.Rows.Add(id_funcion.ToString(),fecha, tituloPelicula,generoPelicula, sala.ToString());
+
+                    dataGridView1.Rows.Add(id_funcion.ToString(), tituloPelicula, genero);
                     
 
                 }
@@ -198,6 +200,26 @@ namespace TpLab.Genagamer
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnConsultarTickets_Click(object sender, EventArgs e)
+        {
+            DataTable tabla = Consultas.consultarTabla(@" SELECT COUNT(nro_ticket) 'Cantidad de Entradas Vendidas'
+                                FROM Tickets t join Funciones f on t.id_funcion = f.id_funcion
+                                join Peliculas p on f.id_pelicula = p.id_pelicula
+                                join Peliculas_Generos pg on pg.id_pelicula = p.id_pelicula
+                                join Generos g on g.id_genero = pg.id_genero
+                                WHERE nro_ticket in (SELECT nro_ticket
+                                FROM Comprobantes c join tickets t1 on
+                                c.id_comprobante = t1.id_comprobante
+                                WHERE year(fecha) = year(GETDATE()) - 1) and
+                                genero like 'Accion%'");
+
+            foreach( DataRow row in tabla.Rows)
+            {
+                int cantidad = Convert.ToInt32( row["Cantidad de Entradas Vendidas"].ToString());
+                txtCantidadTickets.Text = cantidad.ToString();
+            }
         }
     }
 }
