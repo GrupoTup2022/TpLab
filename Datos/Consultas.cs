@@ -56,7 +56,7 @@ namespace TpLab.datos
                                 FROM Comprobantes c join Tickets t1 on
                                 c.id_comprobante = t1.id_comprobante
                                 WHERE datediff(month, fecha, GETDATE())=1)
-                                GROUP BY f.id_funcion, f.id_pelicula
+                                GROUP BY f.id_funcion, f.id_pelicula,p.titulo_original
                                 ORDER BY 1 desc";
             return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
         }
