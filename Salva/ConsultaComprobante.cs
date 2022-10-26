@@ -29,9 +29,39 @@ namespace TpLab.Salva
 
         private void CargarLista()
         {
-            
+            dgvComprobante.Rows.Clear();
+
             DataTable dtG = Consultas.consultarTabla(query);
-            dgvComprobante.DataSource = dtG;
+
+            foreach (DataRow row in dtG.Rows)
+            {
+                int cpbNum = Convert.ToInt32(row[0]);
+                DateTime Fecha = Convert.ToDateTime( row[1].ToString());
+                string fechaFormat = Fecha.Day+"/"+Fecha.Month + "/"+Fecha.Year;
+                String f_pago;
+                switch (row[2].ToString())
+                {
+                    case "1":
+                        f_pago = "Recepcion";
+                        break;
+                    case "2":
+                        f_pago = "Internet";
+                        break;
+                    case "3":
+                        f_pago = "Sorteo";
+                        break;
+                    default:
+                        f_pago = "-";
+                        break;
+                }
+                double precio = Convert.ToDouble(row[3]);
+
+                dgvComprobante.Rows.Add(cpbNum.ToString(),fechaFormat,f_pago,precio.ToString());
+                
+            }
+
+
+            
 
         }
 
@@ -66,7 +96,7 @@ namespace TpLab.Salva
                                 "join Funciones f on t.id_funcion = f.id_funcion " +
                                 "WHERE c.fecha between '" + dtpDesde.Value.ToString("yyyy/MM/dd") + "' and '" + dtpHasta.Value.ToString("yyyy/MM/dd") + "' "+
                                 "and c.id_forma_venta = " + cbFormaVenta.SelectedValue.ToString()+
-                                "group by c.id_comprobante,c.fecha,c.id_forma_venta";
+                                " group by c.id_comprobante,c.fecha,c.id_forma_venta";
 
             MessageBox.Show(query.ToString());
             CargarLista();

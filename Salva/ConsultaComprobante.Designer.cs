@@ -32,6 +32,10 @@
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dataSetTotalYear1 = new TpLab.Nicolas.DataSetTotalYear();
             this.dgvComprobante = new System.Windows.Forms.DataGridView();
+            this.Col_cpNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coL_f_venta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUser = new System.Windows.Forms.Label();
@@ -39,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTotalYear1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComprobante)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,14 +52,16 @@
             // 
             // dtpDesde
             // 
-            this.dtpDesde.Location = new System.Drawing.Point(122, 46);
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(163, 47);
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(160, 27);
             this.dtpDesde.TabIndex = 0;
             // 
             // dtpHasta
             // 
-            this.dtpHasta.Location = new System.Drawing.Point(334, 46);
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(375, 47);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(160, 27);
             this.dtpHasta.TabIndex = 1;
@@ -72,23 +79,60 @@
             this.dgvComprobante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvComprobante.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvComprobante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvComprobante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Col_cpNum,
+            this.Col_Fecha,
+            this.coL_f_venta,
+            this.Col_Precio});
             this.dgvComprobante.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvComprobante.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgvComprobante.Location = new System.Drawing.Point(22, 178);
+            this.dgvComprobante.Location = new System.Drawing.Point(12, 179);
             this.dgvComprobante.Name = "dgvComprobante";
             this.dgvComprobante.ReadOnly = true;
             this.dgvComprobante.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvComprobante.RowTemplate.Height = 29;
-            this.dgvComprobante.Size = new System.Drawing.Size(663, 367);
+            this.dgvComprobante.Size = new System.Drawing.Size(757, 367);
             this.dgvComprobante.TabIndex = 2;
             this.dgvComprobante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComprobante_CellContentClick);
+            // 
+            // Col_cpNum
+            // 
+            this.Col_cpNum.HeaderText = "Comprobante Num.";
+            this.Col_cpNum.MinimumWidth = 6;
+            this.Col_cpNum.Name = "Col_cpNum";
+            this.Col_cpNum.ReadOnly = true;
+            this.Col_cpNum.Width = 155;
+            // 
+            // Col_Fecha
+            // 
+            this.Col_Fecha.HeaderText = "Fecha";
+            this.Col_Fecha.MinimumWidth = 6;
+            this.Col_Fecha.Name = "Col_Fecha";
+            this.Col_Fecha.ReadOnly = true;
+            this.Col_Fecha.Width = 76;
+            // 
+            // coL_f_venta
+            // 
+            this.coL_f_venta.HeaderText = "Forma Venta";
+            this.coL_f_venta.MinimumWidth = 6;
+            this.coL_f_venta.Name = "coL_f_venta";
+            this.coL_f_venta.ReadOnly = true;
+            this.coL_f_venta.Width = 111;
+            // 
+            // Col_Precio
+            // 
+            this.Col_Precio.HeaderText = "Precio";
+            this.Col_Precio.MinimumWidth = 6;
+            this.Col_Precio.Name = "Col_Precio";
+            this.Col_Precio.ReadOnly = true;
+            this.Col_Precio.Width = 79;
             // 
             // btnFiltrar
             // 
             this.btnFiltrar.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnFiltrar.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFiltrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFiltrar.Location = new System.Drawing.Point(549, 73);
+            this.btnFiltrar.Location = new System.Drawing.Point(594, 38);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(121, 48);
             this.btnFiltrar.TabIndex = 3;
@@ -111,7 +155,7 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Miriam Libre", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUser.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblUser.Location = new System.Drawing.Point(122, 14);
+            this.lblUser.Location = new System.Drawing.Point(163, 15);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(81, 29);
             this.lblUser.TabIndex = 7;
@@ -120,7 +164,7 @@
             // cbFormaVenta
             // 
             this.cbFormaVenta.FormattingEnabled = true;
-            this.cbFormaVenta.Location = new System.Drawing.Point(298, 125);
+            this.cbFormaVenta.Location = new System.Drawing.Point(339, 122);
             this.cbFormaVenta.Name = "cbFormaVenta";
             this.cbFormaVenta.Size = new System.Drawing.Size(196, 28);
             this.cbFormaVenta.TabIndex = 4;
@@ -130,7 +174,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Miriam Libre", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(334, 14);
+            this.label1.Location = new System.Drawing.Point(375, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 29);
             this.label1.TabIndex = 8;
@@ -141,7 +185,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Miriam Libre", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(122, 123);
+            this.label2.Location = new System.Drawing.Point(163, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 29);
             this.label2.TabIndex = 9;
@@ -150,19 +194,30 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TpLab.Properties.Resources.document;
-            this.pictureBox2.Location = new System.Drawing.Point(617, 474);
+            this.pictureBox2.Location = new System.Drawing.Point(714, 483);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(83, 87);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::TpLab.Properties.Resources.BackArrowPNG;
+            this.button1.Location = new System.Drawing.Point(13, 103);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(52, 46);
+            this.button1.TabIndex = 11;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // ConsultaComprobante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(712, 573);
+            this.ClientSize = new System.Drawing.Size(800, 573);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -198,5 +253,10 @@
         private Label label1;
         private Label label2;
         private PictureBox pictureBox2;
+        private DataGridViewTextBoxColumn Col_cpNum;
+        private DataGridViewTextBoxColumn Col_Fecha;
+        private DataGridViewTextBoxColumn coL_f_venta;
+        private DataGridViewTextBoxColumn Col_Precio;
+        private Button button1;
     }
 }
