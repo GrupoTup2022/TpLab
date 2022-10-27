@@ -76,7 +76,7 @@
             // 
             this.dgvComprobante.AllowUserToAddRows = false;
             this.dgvComprobante.AllowUserToDeleteRows = false;
-            this.dgvComprobante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvComprobante.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvComprobante.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvComprobante.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComprobante.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -86,9 +86,10 @@
             this.Col_Precio});
             this.dgvComprobante.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvComprobante.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgvComprobante.Location = new System.Drawing.Point(12, 179);
+            this.dgvComprobante.Location = new System.Drawing.Point(12, 173);
             this.dgvComprobante.Name = "dgvComprobante";
             this.dgvComprobante.ReadOnly = true;
+            this.dgvComprobante.RowHeadersVisible = false;
             this.dgvComprobante.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvComprobante.RowTemplate.Height = 29;
             this.dgvComprobante.Size = new System.Drawing.Size(757, 367);
@@ -101,7 +102,6 @@
             this.Col_cpNum.MinimumWidth = 6;
             this.Col_cpNum.Name = "Col_cpNum";
             this.Col_cpNum.ReadOnly = true;
-            this.Col_cpNum.Width = 155;
             // 
             // Col_Fecha
             // 
@@ -109,7 +109,6 @@
             this.Col_Fecha.MinimumWidth = 6;
             this.Col_Fecha.Name = "Col_Fecha";
             this.Col_Fecha.ReadOnly = true;
-            this.Col_Fecha.Width = 76;
             // 
             // coL_f_venta
             // 
@@ -117,7 +116,6 @@
             this.coL_f_venta.MinimumWidth = 6;
             this.coL_f_venta.Name = "coL_f_venta";
             this.coL_f_venta.ReadOnly = true;
-            this.coL_f_venta.Width = 111;
             // 
             // Col_Precio
             // 
@@ -125,12 +123,11 @@
             this.Col_Precio.MinimumWidth = 6;
             this.Col_Precio.Name = "Col_Precio";
             this.Col_Precio.ReadOnly = true;
-            this.Col_Precio.Width = 79;
             // 
             // btnFiltrar
             // 
             this.btnFiltrar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnFiltrar.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFiltrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnFiltrar.Location = new System.Drawing.Point(594, 38);
             this.btnFiltrar.Name = "btnFiltrar";
@@ -153,11 +150,11 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Font = new System.Drawing.Font("Miriam Libre", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUser.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblUser.Location = new System.Drawing.Point(163, 15);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(81, 29);
+            this.lblUser.Size = new System.Drawing.Size(81, 26);
             this.lblUser.TabIndex = 7;
             this.lblUser.Text = "Desde:";
             // 
@@ -172,22 +169,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Miriam Libre", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Location = new System.Drawing.Point(375, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 29);
+            this.label1.Size = new System.Drawing.Size(75, 26);
             this.label1.TabIndex = 8;
             this.label1.Text = "Hasta:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Miriam Libre", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Location = new System.Drawing.Point(163, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(170, 29);
+            this.label2.Size = new System.Drawing.Size(168, 26);
             this.label2.TabIndex = 9;
             this.label2.Text = "Forma de Pago:";
             // 
@@ -229,6 +226,7 @@
             this.Controls.Add(this.dtpHasta);
             this.Controls.Add(this.dtpDesde);
             this.Name = "ConsultaComprobante";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Comprobantes";
             this.Load += new System.EventHandler(this.ConsultaComprobante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSetTotalYear1)).EndInit();
