@@ -53,9 +53,10 @@
             this.btnConsultar.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnConsultar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnConsultar.Location = new System.Drawing.Point(961, 61);
+            this.btnConsultar.Location = new System.Drawing.Point(841, 46);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(127, 67);
+            this.btnConsultar.Size = new System.Drawing.Size(111, 50);
             this.btnConsultar.TabIndex = 1;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -82,22 +83,24 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsultaTickets.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvConsultaTickets.Location = new System.Drawing.Point(41, 176);
+            this.dgvConsultaTickets.Location = new System.Drawing.Point(36, 132);
+            this.dgvConsultaTickets.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvConsultaTickets.Name = "dgvConsultaTickets";
             this.dgvConsultaTickets.RowHeadersWidth = 51;
             this.dgvConsultaTickets.RowTemplate.Height = 29;
-            this.dgvConsultaTickets.Size = new System.Drawing.Size(1076, 420);
+            this.dgvConsultaTickets.Size = new System.Drawing.Size(942, 315);
             this.dgvConsultaTickets.TabIndex = 0;
             // 
             // cboGeneros
             // 
             this.cboGeneros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboGeneros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGeneros.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cboGeneros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cboGeneros.FormattingEnabled = true;
-            this.cboGeneros.Location = new System.Drawing.Point(570, 97);
+            this.cboGeneros.Location = new System.Drawing.Point(499, 73);
+            this.cboGeneros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboGeneros.Name = "cboGeneros";
-            this.cboGeneros.Size = new System.Drawing.Size(138, 31);
+            this.cboGeneros.Size = new System.Drawing.Size(121, 25);
             this.cboGeneros.TabIndex = 2;
             this.cboGeneros.Tag = "";
             // 
@@ -105,13 +108,14 @@
             // 
             this.cboSalas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSalas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSalas.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cboSalas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cboSalas.FormattingEnabled = true;
             this.cboSalas.Items.AddRange(new object[] {
             "Todos"});
-            this.cboSalas.Location = new System.Drawing.Point(756, 97);
+            this.cboSalas.Location = new System.Drawing.Point(662, 73);
+            this.cboSalas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboSalas.Name = "cboSalas";
-            this.cboSalas.Size = new System.Drawing.Size(138, 31);
+            this.cboSalas.Size = new System.Drawing.Size(121, 25);
             this.cboSalas.TabIndex = 3;
             this.cboSalas.Tag = "Todos";
             // 
@@ -121,9 +125,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(217, 61);
+            this.label1.Location = new System.Drawing.Point(190, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 29);
+            this.label1.Size = new System.Drawing.Size(75, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Desde:";
             // 
@@ -133,9 +137,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(592, 61);
+            this.label2.Location = new System.Drawing.Point(518, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 29);
+            this.label2.Size = new System.Drawing.Size(77, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Genero";
             // 
@@ -145,9 +149,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Location = new System.Drawing.Point(413, 61);
+            this.label3.Location = new System.Drawing.Point(361, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 29);
+            this.label3.Size = new System.Drawing.Size(63, 25);
             this.label3.TabIndex = 6;
             this.label3.Text = "Hasta";
             // 
@@ -157,9 +161,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(791, 61);
+            this.label4.Location = new System.Drawing.Point(692, 46);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 29);
+            this.label4.Size = new System.Drawing.Size(52, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Sala";
             // 
@@ -167,26 +171,29 @@
             // 
             this.dtpDesde.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(197, 101);
+            this.dtpDesde.Location = new System.Drawing.Point(172, 76);
+            this.dtpDesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(138, 27);
+            this.dtpDesde.Size = new System.Drawing.Size(121, 23);
             this.dtpDesde.TabIndex = 8;
             // 
             // dtpHasta
             // 
             this.dtpHasta.CalendarFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(386, 101);
+            this.dtpHasta.Location = new System.Drawing.Point(338, 76);
+            this.dtpHasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(138, 27);
+            this.dtpHasta.Size = new System.Drawing.Size(121, 23);
             this.dtpHasta.TabIndex = 9;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TpLab.Properties.Resources.LogoPng;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 9);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 86);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 64);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -194,9 +201,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TpLab.Properties.Resources.ticketLogoPNG;
-            this.pictureBox2.Location = new System.Drawing.Point(1075, 533);
+            this.pictureBox2.Location = new System.Drawing.Point(941, 400);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(78, 90);
+            this.pictureBox2.Size = new System.Drawing.Size(68, 68);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -205,18 +213,20 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Image = global::TpLab.Properties.Resources.BackArrowPNG;
-            this.button1.Location = new System.Drawing.Point(23, 113);
+            this.button1.Location = new System.Drawing.Point(20, 85);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 46);
+            this.button1.Size = new System.Drawing.Size(46, 34);
             this.button1.TabIndex = 12;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ConsultaTickets
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1165, 635);
+            this.ClientSize = new System.Drawing.Size(1019, 476);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -230,6 +240,7 @@
             this.Controls.Add(this.cboGeneros);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.dgvConsultaTickets);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ConsultaTickets";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar Tickets";

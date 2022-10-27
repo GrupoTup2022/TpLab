@@ -113,8 +113,11 @@ namespace TpLab.Genagamer
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea salir?", "saliendo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            DialogResult dialogResult = MessageBox.Show("Desea volver al menú anterior?", "Salir", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
                 this.Dispose();
+            }
         }
 
         private void btn_consultar_Click(object sender, EventArgs e)

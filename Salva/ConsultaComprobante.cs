@@ -128,5 +128,14 @@ namespace TpLab.Salva
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Desea volver al menú anterior?", "Salir", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
+        }
     }
 }

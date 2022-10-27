@@ -296,7 +296,7 @@ namespace TpLab.Luks
                 ticket.Promo.Porcentaje = float.Parse(promos.Rows[cbo_promos.SelectedIndex]["porcentaje"].ToString());
                 ticket.Promo.Descripcion = promos.Rows[cbo_promos.SelectedIndex]["descripcion"].ToString();
                 tickets.Add(ticket);
-                dgv_tickets.Rows.Add( ticket.Butaca.Id,Funcion.Sala.Nombre,Funcion.Horario.Nombre, Funcion.Pelicula.Titulo_Local, Funcion.Precio,ticket.Promo.Porcentaje,ticket.Promo.Descripcion,ticket.Promo.Porcentaje*ticket.Funcion.Precio/100);
+                dgv_tickets.Rows.Add( ticket.Butaca.Id,Funcion.Sala.Nombre,Funcion.Horario.Nombre, Funcion.Pelicula.Titulo_Local, Funcion.Precio,(100-ticket.Promo.Porcentaje).ToString()+"%",ticket.Promo.Descripcion,ticket.Promo.Porcentaje*ticket.Funcion.Precio/100);
                 cant--;
             }
             else if ((Boolean)dgv_Butacas.SelectedCells[0].Value == true && dgv_Butacas.SelectedCells[0].Style.BackColor != Color.LightGray)
@@ -311,7 +311,7 @@ namespace TpLab.Luks
                     }
                 }                
                      tickets.Remove(ticket);
-                if(Convert.ToInt32(n_cant.Value)<=cant+1)
+                if((cant)<Convert.ToInt32(n_cant.Value))
                 cant++;
             }
         }
@@ -323,6 +323,7 @@ namespace TpLab.Luks
 
         private void btn_pagos_Click(object sender, EventArgs e)
         {
+            monto = 0;
             foreach (Ticket t in tickets)
             {
                 monto = (t.Funcion.Precio * t.Promo.Porcentaje / 100) + monto;

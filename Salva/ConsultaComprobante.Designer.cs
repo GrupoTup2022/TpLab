@@ -53,17 +53,19 @@
             // dtpDesde
             // 
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(163, 47);
+            this.dtpDesde.Location = new System.Drawing.Point(143, 35);
+            this.dtpDesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(160, 27);
+            this.dtpDesde.Size = new System.Drawing.Size(140, 23);
             this.dtpDesde.TabIndex = 0;
             // 
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(375, 47);
+            this.dtpHasta.Location = new System.Drawing.Point(328, 35);
+            this.dtpHasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(160, 27);
+            this.dtpHasta.Size = new System.Drawing.Size(140, 23);
             this.dtpHasta.TabIndex = 1;
             // 
             // dataSetTotalYear1
@@ -86,13 +88,14 @@
             this.Col_Precio});
             this.dgvComprobante.GridColor = System.Drawing.SystemColors.Highlight;
             this.dgvComprobante.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgvComprobante.Location = new System.Drawing.Point(12, 173);
+            this.dgvComprobante.Location = new System.Drawing.Point(10, 130);
+            this.dgvComprobante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvComprobante.Name = "dgvComprobante";
             this.dgvComprobante.ReadOnly = true;
             this.dgvComprobante.RowHeadersVisible = false;
             this.dgvComprobante.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvComprobante.RowTemplate.Height = 29;
-            this.dgvComprobante.Size = new System.Drawing.Size(757, 367);
+            this.dgvComprobante.Size = new System.Drawing.Size(662, 275);
             this.dgvComprobante.TabIndex = 2;
             this.dgvComprobante.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvComprobante_CellContentClick);
             // 
@@ -129,9 +132,10 @@
             this.btnFiltrar.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnFiltrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnFiltrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnFiltrar.Location = new System.Drawing.Point(594, 38);
+            this.btnFiltrar.Location = new System.Drawing.Point(520, 28);
+            this.btnFiltrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(121, 48);
+            this.btnFiltrar.Size = new System.Drawing.Size(106, 36);
             this.btnFiltrar.TabIndex = 3;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = false;
@@ -140,9 +144,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::TpLab.Properties.Resources.LogoPng;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 8);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 64);
+            this.pictureBox1.Size = new System.Drawing.Size(46, 48);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -152,18 +157,19 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblUser.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblUser.Location = new System.Drawing.Point(163, 15);
+            this.lblUser.Location = new System.Drawing.Point(143, 11);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(81, 26);
+            this.lblUser.Size = new System.Drawing.Size(67, 22);
             this.lblUser.TabIndex = 7;
             this.lblUser.Text = "Desde:";
             // 
             // cbFormaVenta
             // 
             this.cbFormaVenta.FormattingEnabled = true;
-            this.cbFormaVenta.Location = new System.Drawing.Point(339, 122);
+            this.cbFormaVenta.Location = new System.Drawing.Point(297, 92);
+            this.cbFormaVenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFormaVenta.Name = "cbFormaVenta";
-            this.cbFormaVenta.Size = new System.Drawing.Size(196, 28);
+            this.cbFormaVenta.Size = new System.Drawing.Size(172, 23);
             this.cbFormaVenta.TabIndex = 4;
             // 
             // label1
@@ -171,9 +177,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(375, 15);
+            this.label1.Location = new System.Drawing.Point(328, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 26);
+            this.label1.Size = new System.Drawing.Size(62, 22);
             this.label1.TabIndex = 8;
             this.label1.Text = "Hasta:";
             // 
@@ -182,18 +188,19 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Location = new System.Drawing.Point(163, 120);
+            this.label2.Location = new System.Drawing.Point(143, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 26);
+            this.label2.Size = new System.Drawing.Size(138, 22);
             this.label2.TabIndex = 9;
             this.label2.Text = "Forma de Pago:";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::TpLab.Properties.Resources.document;
-            this.pictureBox2.Location = new System.Drawing.Point(714, 483);
+            this.pictureBox2.Location = new System.Drawing.Point(625, 362);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(83, 87);
+            this.pictureBox2.Size = new System.Drawing.Size(73, 65);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
@@ -202,18 +209,20 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.Control;
             this.button1.Image = global::TpLab.Properties.Resources.BackArrowPNG;
-            this.button1.Location = new System.Drawing.Point(13, 103);
+            this.button1.Location = new System.Drawing.Point(11, 77);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 46);
+            this.button1.Size = new System.Drawing.Size(46, 34);
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ConsultaComprobante
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(800, 573);
+            this.ClientSize = new System.Drawing.Size(700, 430);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
@@ -225,6 +234,7 @@
             this.Controls.Add(this.dgvComprobante);
             this.Controls.Add(this.dtpHasta);
             this.Controls.Add(this.dtpDesde);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ConsultaComprobante";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Comprobantes";

@@ -52,10 +52,19 @@ namespace TpLab.Nicolas
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Dispose();
+            DialogResult dialogResult = MessageBox.Show("Desea volver al menú anterior?", "Salir", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
 
         private void DGVVentaSalaThisYear_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }
