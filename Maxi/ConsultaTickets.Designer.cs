@@ -41,6 +41,7 @@
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultaTickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -92,7 +93,7 @@
             // 
             this.cboGeneros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboGeneros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboGeneros.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cboGeneros.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cboGeneros.FormattingEnabled = true;
             this.cboGeneros.Location = new System.Drawing.Point(570, 97);
             this.cboGeneros.Name = "cboGeneros";
@@ -104,7 +105,7 @@
             // 
             this.cboSalas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cboSalas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSalas.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cboSalas.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.cboSalas.FormattingEnabled = true;
             this.cboSalas.Items.AddRange(new object[] {
             "Todos"});
@@ -200,12 +201,23 @@
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = global::TpLab.Properties.Resources.BackArrowPNG;
+            this.button1.Location = new System.Drawing.Point(23, 113);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(52, 46);
+            this.button1.TabIndex = 12;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // ConsultaTickets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1165, 635);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dtpHasta);
@@ -243,5 +255,6 @@
         private DateTimePicker dtpHasta;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button button1;
     }
 }

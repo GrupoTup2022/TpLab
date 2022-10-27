@@ -89,13 +89,13 @@ namespace TpLab.datos
         public static DataTable monto_sala_mes()
         {
             string commando = @"---monto total facturado por sala y por mes
-                                select sum(f.precio* p.porcentaje/100) 'Total Facturado',s.id_sala,month(f.fecha) 'Mes',year(f.fecha)'Año'
+                               select sum(f.precio* p.porcentaje/100) 'Total Facturado',dbo.f_nombresala(s.id_sala)'Sala',dbo.f_nombreMesespanol(f.fecha) 'Mes',year(f.fecha)'Año'
                                 from tickets t
                                 join Comprobantes c on c.id_comprobante=t.id_comprobante
                                     join promos p on p.id_promo = t.id_promo
                                 join funciones f on f.id_funcion = t.id_funcion
                                 join Salas s on s.id_sala = f.id_sala
-                                group by s.id_sala, month(f.fecha), year(f.fecha)";
+                                group by dbo.f_nombresala(s.id_sala), dbo.f_nombreMesespanol(f.fecha), year(f.fecha)";
            return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
         }
 
@@ -103,13 +103,14 @@ namespace TpLab.datos
 
         {
             string commando = @"---Cantidad de entradas vendidas por sala este año
-                                select count(nro_ticket)'Cantidad de tickets', s.id_sala 
+                                
+					select count(nro_ticket)'Cantidad de tickets',dbo.f_nombresala(s.id_sala)'Sala' 
                                 from tickets t 
                                 join Comprobantes c on c.id_comprobante=t.id_comprobante 
                                 join Butacas b on b.id_butaca = t.id_butaca 
                                 join Salas s on s.id_sala = b.id_sala 
                                 where DATEDIFF(year, year(fecha),year(getdate())) = 0 
-                                group by s.id_sala ";
+                                group by dbo.f_nombresala(s.id_sala)";
             return HelperDB.ObtenerInstancia().ConsultaSQLComando(commando);
         }
 
