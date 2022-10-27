@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComprobanteInsert));
             this.dgv_tickets = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horarioticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PreciosinDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuentoticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbo_peli = new System.Windows.Forms.ComboBox();
             this.cbo_sala = new System.Windows.Forms.ComboBox();
             this.cbo_horario = new System.Windows.Forms.ComboBox();
@@ -41,6 +49,11 @@
             this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
             this.lbl_fecha = new System.Windows.Forms.Label();
             this.dgv_Butacas = new System.Windows.Forms.DataGridView();
+            this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.B = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.C = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.D = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.E = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.n_cant = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -58,19 +71,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.A = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.B = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.C = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.D = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.E = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horarioticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tituloTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PreciosinDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuentoticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombrePromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Butacas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cant)).BeginInit();
@@ -102,6 +102,70 @@
             this.dgv_tickets.Size = new System.Drawing.Size(213, 352);
             this.dgv_tickets.TabIndex = 0;
             this.dgv_tickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tickets_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Numero de Butaca";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 85;
+            // 
+            // salaticket
+            // 
+            this.salaticket.HeaderText = "Sala";
+            this.salaticket.MinimumWidth = 6;
+            this.salaticket.Name = "salaticket";
+            this.salaticket.ReadOnly = true;
+            this.salaticket.Width = 95;
+            // 
+            // horarioticket
+            // 
+            this.horarioticket.HeaderText = "Horario";
+            this.horarioticket.MinimumWidth = 6;
+            this.horarioticket.Name = "horarioticket";
+            this.horarioticket.ReadOnly = true;
+            this.horarioticket.Width = 75;
+            // 
+            // tituloTicket
+            // 
+            this.tituloTicket.HeaderText = "Titulo";
+            this.tituloTicket.MinimumWidth = 6;
+            this.tituloTicket.Name = "tituloTicket";
+            this.tituloTicket.ReadOnly = true;
+            this.tituloTicket.Width = 125;
+            // 
+            // PreciosinDescuento
+            // 
+            this.PreciosinDescuento.HeaderText = "Precio sin descuento";
+            this.PreciosinDescuento.MinimumWidth = 6;
+            this.PreciosinDescuento.Name = "PreciosinDescuento";
+            this.PreciosinDescuento.ReadOnly = true;
+            this.PreciosinDescuento.Width = 125;
+            // 
+            // Descuentoticket
+            // 
+            this.Descuentoticket.HeaderText = "Descuento";
+            this.Descuentoticket.MinimumWidth = 6;
+            this.Descuentoticket.Name = "Descuentoticket";
+            this.Descuentoticket.ReadOnly = true;
+            this.Descuentoticket.Width = 125;
+            // 
+            // NombrePromo
+            // 
+            this.NombrePromo.HeaderText = "Promo";
+            this.NombrePromo.MinimumWidth = 6;
+            this.NombrePromo.Name = "NombrePromo";
+            this.NombrePromo.ReadOnly = true;
+            this.NombrePromo.Width = 125;
+            // 
+            // PrecioTicket
+            // 
+            this.PrecioTicket.HeaderText = "PrecioFinal";
+            this.PrecioTicket.MinimumWidth = 6;
+            this.PrecioTicket.Name = "PrecioTicket";
+            this.PrecioTicket.ReadOnly = true;
+            this.PrecioTicket.Width = 125;
             // 
             // cbo_peli
             // 
@@ -219,6 +283,46 @@
             this.dgv_Butacas.Size = new System.Drawing.Size(498, 233);
             this.dgv_Butacas.TabIndex = 11;
             this.dgv_Butacas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Butacas_CellContentClick);
+            // 
+            // A
+            // 
+            this.A.HeaderText = "A";
+            this.A.MinimumWidth = 6;
+            this.A.Name = "A";
+            this.A.ReadOnly = true;
+            this.A.Width = 99;
+            // 
+            // B
+            // 
+            this.B.HeaderText = "B";
+            this.B.MinimumWidth = 6;
+            this.B.Name = "B";
+            this.B.ReadOnly = true;
+            this.B.Width = 99;
+            // 
+            // C
+            // 
+            this.C.HeaderText = "C";
+            this.C.MinimumWidth = 6;
+            this.C.Name = "C";
+            this.C.ReadOnly = true;
+            this.C.Width = 99;
+            // 
+            // D
+            // 
+            this.D.HeaderText = "D";
+            this.D.MinimumWidth = 6;
+            this.D.Name = "D";
+            this.D.ReadOnly = true;
+            this.D.Width = 99;
+            // 
+            // E
+            // 
+            this.E.HeaderText = "E";
+            this.E.MinimumWidth = 6;
+            this.E.Name = "E";
+            this.E.ReadOnly = true;
+            this.E.Width = 99;
             // 
             // label5
             // 
@@ -391,117 +495,13 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(473, 338);
+            this.pictureBox2.Location = new System.Drawing.Point(482, 350);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(52, 52);
+            this.pictureBox2.Size = new System.Drawing.Size(43, 40);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
-            // 
-            // A
-            // 
-            this.A.HeaderText = "A";
-            this.A.MinimumWidth = 6;
-            this.A.Name = "A";
-            this.A.ReadOnly = true;
-            this.A.Width = 99;
-            // 
-            // B
-            // 
-            this.B.HeaderText = "B";
-            this.B.MinimumWidth = 6;
-            this.B.Name = "B";
-            this.B.ReadOnly = true;
-            this.B.Width = 99;
-            // 
-            // C
-            // 
-            this.C.HeaderText = "C";
-            this.C.MinimumWidth = 6;
-            this.C.Name = "C";
-            this.C.ReadOnly = true;
-            this.C.Width = 99;
-            // 
-            // D
-            // 
-            this.D.HeaderText = "D";
-            this.D.MinimumWidth = 6;
-            this.D.Name = "D";
-            this.D.ReadOnly = true;
-            this.D.Width = 99;
-            // 
-            // E
-            // 
-            this.E.HeaderText = "E";
-            this.E.MinimumWidth = 6;
-            this.E.Name = "E";
-            this.E.ReadOnly = true;
-            this.E.Width = 99;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Numero de Butaca";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 85;
-            // 
-            // salaticket
-            // 
-            this.salaticket.HeaderText = "Sala";
-            this.salaticket.MinimumWidth = 6;
-            this.salaticket.Name = "salaticket";
-            this.salaticket.ReadOnly = true;
-            this.salaticket.Width = 95;
-            // 
-            // horarioticket
-            // 
-            this.horarioticket.HeaderText = "Horario";
-            this.horarioticket.MinimumWidth = 6;
-            this.horarioticket.Name = "horarioticket";
-            this.horarioticket.ReadOnly = true;
-            this.horarioticket.Width = 75;
-            // 
-            // tituloTicket
-            // 
-            this.tituloTicket.HeaderText = "Titulo";
-            this.tituloTicket.MinimumWidth = 6;
-            this.tituloTicket.Name = "tituloTicket";
-            this.tituloTicket.ReadOnly = true;
-            this.tituloTicket.Width = 125;
-            // 
-            // PreciosinDescuento
-            // 
-            this.PreciosinDescuento.HeaderText = "Precio sin descuento";
-            this.PreciosinDescuento.MinimumWidth = 6;
-            this.PreciosinDescuento.Name = "PreciosinDescuento";
-            this.PreciosinDescuento.ReadOnly = true;
-            this.PreciosinDescuento.Width = 125;
-            // 
-            // Descuentoticket
-            // 
-            this.Descuentoticket.HeaderText = "Descuento";
-            this.Descuentoticket.MinimumWidth = 6;
-            this.Descuentoticket.Name = "Descuentoticket";
-            this.Descuentoticket.ReadOnly = true;
-            this.Descuentoticket.Width = 125;
-            // 
-            // NombrePromo
-            // 
-            this.NombrePromo.HeaderText = "Promo";
-            this.NombrePromo.MinimumWidth = 6;
-            this.NombrePromo.Name = "NombrePromo";
-            this.NombrePromo.ReadOnly = true;
-            this.NombrePromo.Width = 125;
-            // 
-            // PrecioTicket
-            // 
-            this.PrecioTicket.HeaderText = "PrecioFinal";
-            this.PrecioTicket.MinimumWidth = 6;
-            this.PrecioTicket.Name = "PrecioTicket";
-            this.PrecioTicket.ReadOnly = true;
-            this.PrecioTicket.Width = 125;
             // 
             // ComprobanteInsert
             // 

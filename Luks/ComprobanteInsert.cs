@@ -45,7 +45,8 @@ namespace TpLab.Luks
             sala = new Sala();
             Funcion.Pelicula = peli;
             Funcion.Horario = horario;
-            Funcion.Sala = sala; 
+            Funcion.Sala = sala;
+            cant = 1;
         }
 
 
@@ -137,34 +138,35 @@ namespace TpLab.Luks
             }
             List<bool> ListaOcupada = new List<bool>();
             List <string > ListaNombre = new List<string>();
+            ListaOcupada.Clear();
             for (int i = 0; i < butacas.Rows.Count; i = i + 5)
             {
-                ListaOcupada.Clear();
                 for (int j = 0; j < 5; j++)
                 {
                     if ((i + j) < butacas.Rows.Count) {
-                        ListaOcupada.Add(butacas.Rows[i + j][4].ToString() != "");
+                        string a = butacas.Rows[i + j]["nro_ticket"].ToString();
+                        ListaOcupada.Add(butacas.Rows[i + j]["nro_ticket"].ToString() != "");
                     }
                 }
                 if (ListaOcupada.Count > 4)
                 {
-                    dgv_Butacas.Rows.Add(ListaOcupada[0], ListaOcupada[1], ListaOcupada[2], ListaOcupada[3], ListaOcupada[4]);
+                    dgv_Butacas.Rows.Add(ListaOcupada[i], ListaOcupada[i+1], ListaOcupada[i+2], ListaOcupada[i+3], ListaOcupada[i+4]);
                 }
                 else if (ListaOcupada.Count > 3)
                 {
-                    dgv_Butacas.Rows.Add(ListaOcupada[0], ListaOcupada[1], ListaOcupada[2], ListaOcupada[3]);
+                    dgv_Butacas.Rows.Add(ListaOcupada[i], ListaOcupada[i + 1], ListaOcupada[i + 2], ListaOcupada[i + 3]);
                 }
                 else if (ListaOcupada.Count > 2)
                 {
-                    dgv_Butacas.Rows.Add(ListaOcupada[0], ListaOcupada[1], ListaOcupada[2]);
+                    dgv_Butacas.Rows.Add(ListaOcupada[i], ListaOcupada[i + 1], ListaOcupada[i + 2]);
                 }
                 else if (ListaOcupada.Count > 1)
                 {
-                    dgv_Butacas.Rows.Add(ListaOcupada[0], ListaOcupada[1]);
+                    dgv_Butacas.Rows.Add(ListaOcupada[i], ListaOcupada[i + 1]);
                 }
                 else
                 {
-                    dgv_Butacas.Rows.Add(ListaOcupada[0]);
+                    dgv_Butacas.Rows.Add(ListaOcupada[i]);
                 }
                 row++;
             }
@@ -187,9 +189,9 @@ namespace TpLab.Luks
 
         private void Fijar_butacas()
         {
-            for(int i=0;i<dgv_Butacas.Rows.Count-1;i++)
+            for(int i=0;i<dgv_Butacas.Rows.Count;i++)
             {
-                for (int j=0;j<dgv_Butacas.Rows[i].Cells.Count-1;j++)
+                for (int j=0;j<dgv_Butacas.Rows[i].Cells.Count;j++)
                 {
                     if ((Boolean)dgv_Butacas.Rows[i].Cells[j].Value)
                         dgv_Butacas.Rows[i].Cells[j].Style.BackColor = Color.LightGray;
@@ -210,26 +212,28 @@ namespace TpLab.Luks
         {
             CargarComboPeli();
             DeshabilitarTodo();
+            cbo_sala.SelectedIndex = -1;
+            cbo_horario.SelectedIndex = -1;
+            cbo_audio.SelectedIndex = -1;
             cbo_peli.SelectedIndex = -1;
             cbo_peli.Enabled = true;
-            cbo_audio.SelectedIndex = -1;
-            cbo_horario.SelectedIndex = -1;
-            cbo_sala.SelectedIndex = -1;
+            dgv_Butacas.Rows.Clear();
         }
 
         private void cbo_peli_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cbo_peli.Enabled)
             {
+                cbo_sala.SelectedIndex = -1;
                 CargarComboIdioma();
                 DeshabilitarTodo();
+                cbo_horario.SelectedIndex = -1;
                 cbo_peli.Enabled = true;
                 cbo_audio.SelectedIndex = -1;
                 cbo_audio.Enabled = true;
-                cbo_horario.SelectedIndex = -1;
-                cbo_sala.SelectedIndex = -1;
                 if (cbo_peli.Text != "")
                     Funcion.Pelicula.Titulo_Local = cbo_peli.Text.ToString();
+                dgv_Butacas.Rows.Clear();
             }
         }
 
@@ -243,6 +247,7 @@ namespace TpLab.Luks
                 n_cant.Enabled = false;
                 if (cbo_horario.Text != "")
                     Funcion.Horario.Nombre=cbo_horario.Text.ToString();
+                dgv_Butacas.Rows.Clear();
             }
         }
 
@@ -257,6 +262,7 @@ namespace TpLab.Luks
                 cbo_horario.SelectedIndex = -1;
                 cbo_horario.Enabled = true;
                 cbo_sala.SelectedIndex = -1;
+                dgv_Butacas.Rows.Clear();
             }
         }
 
@@ -278,7 +284,10 @@ namespace TpLab.Luks
 
         private void n_cant_ValueChanged(object sender, EventArgs e)
         {
-            cant = Convert.ToInt32(n_cant.Value);
+            if ((Convert.ToInt32(n_cant.Value)-cant)>0)
+                cant = Convert.ToInt32(n_cant.Value);
+            else
+                cant = Convert.ToInt32(n_cant.Value);
         }
 
         private void dgv_Butacas_CellContentClick(object sender, DataGridViewCellEventArgs e)
