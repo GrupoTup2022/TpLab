@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CBmes = new System.Windows.Forms.ComboBox();
+            this.btn_consultar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloPeliculaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generoCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CBgeneros = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnConsultarTickets = new System.Windows.Forms.Button();
             this.txtCantidadTickets = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.CBgeneros = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.generoCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tituloPeliculaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_consultar = new System.Windows.Forms.Button();
-            this.CBmes = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -149,33 +149,44 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCLM,
+            this.idpeliculaCLM,
             this.tituloPeliculaCLM,
             this.generoCLM});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 152);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(30, 179);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(815, 448);
+            this.dataGridView1.Size = new System.Drawing.Size(495, 236);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.UseWaitCursor = true;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // generoCLM
+            // idCLM
             // 
-            this.generoCLM.HeaderText = "Genero de la pelicula";
-            this.generoCLM.MinimumWidth = 6;
-            this.generoCLM.Name = "generoCLM";
-            this.generoCLM.Width = 150;
+            this.idCLM.HeaderText = "id";
+            this.idCLM.Name = "idCLM";
             // 
             // tituloPeliculaCLM
             // 
             this.tituloPeliculaCLM.HeaderText = "Titulo de la pelicula";
-            this.tituloPeliculaCLM.MinimumWidth = 6;
             this.tituloPeliculaCLM.Name = "tituloPeliculaCLM";
             this.tituloPeliculaCLM.Width = 200;
             // 
-            // idCLM
+            // generoCLM
+            // 
+            this.generoCLM.HeaderText = "Genero de la pelicula";
+            this.generoCLM.Name = "generoCLM";
+            this.generoCLM.Width = 150;
+            // 
+            // CBgeneros
+            // 
+            this.CBgeneros.FormattingEnabled = true;
+            this.CBgeneros.Location = new System.Drawing.Point(159, 33);
+            this.CBgeneros.Name = "CBgeneros";
+            this.CBgeneros.Size = new System.Drawing.Size(158, 23);
+            this.CBgeneros.TabIndex = 2;
+            this.CBgeneros.SelectedIndexChanged += new System.EventHandler(this.CBgeneros_SelectedIndexChanged);
+            // 
+            // label3
             // 
             this.idCLM.HeaderText = "id";
             this.idCLM.MinimumWidth = 6;
@@ -248,6 +259,23 @@
             this.pictureBox2.TabIndex = 12;
             this.pictureBox2.TabStop = false;
             // 
+            // idpeliculaCLM
+            // 
+            this.idpeliculaCLM.HeaderText = "ID de la pelicula";
+            this.idpeliculaCLM.Name = "idpeliculaCLM";
+            // 
+            // tituloPeliculaCLM
+            // 
+            this.tituloPeliculaCLM.HeaderText = "Titulo de la pelicula";
+            this.tituloPeliculaCLM.Name = "tituloPeliculaCLM";
+            this.tituloPeliculaCLM.Width = 200;
+            // 
+            // generoCLM
+            // 
+            this.generoCLM.HeaderText = "Genero de la pelicula";
+            this.generoCLM.Name = "generoCLM";
+            this.generoCLM.Width = 150;
+            // 
             // consulta_funciones_mas_vendidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -279,10 +307,6 @@
         private GroupBox groupBox2;
         private TextBox txtCantidadTickets;
         private Button btnConsultarTickets;
-        private Label label2;
-        private Label label3;
-        private ComboBox CBgeneros;
-        private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn idCLM;
         private DataGridViewTextBoxColumn tituloPeliculaCLM;
         private DataGridViewTextBoxColumn generoCLM;
