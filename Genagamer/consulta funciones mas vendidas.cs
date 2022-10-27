@@ -146,11 +146,11 @@ order by 1 desc  ");
 
                 foreach ( DataRow row in TablaPeliculas.Rows)
                 {
-                    int id_funcion = Convert.ToInt32(row["id_pelicula"]);
 
-                    
+
+                    int id_pelicula =Convert.ToInt32( row["id_pelicula"].ToString());
                     string tituloPelicula = row["titulo_original"].ToString();
-                   
+                    string genero2 = row["genero"].ToString();
               
 
 
@@ -158,7 +158,7 @@ order by 1 desc  ");
 
 
 
-                    dataGridView1.Rows.Add(id_funcion.ToString(), tituloPelicula, genero);
+                    dataGridView1.Rows.Add(id_pelicula.ToString(), tituloPelicula, genero2);
                     
 
                 }

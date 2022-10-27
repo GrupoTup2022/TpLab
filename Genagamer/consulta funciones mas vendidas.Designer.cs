@@ -33,9 +33,6 @@
             this.CBmes = new System.Windows.Forms.ComboBox();
             this.btn_consultar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tituloPeliculaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generoCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CBgeneros = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,6 +40,9 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnConsultarTickets = new System.Windows.Forms.Button();
             this.txtCantidadTickets = new System.Windows.Forms.TextBox();
+            this.idpeliculaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloPeliculaCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generoCLM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -96,32 +96,17 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idCLM,
+            this.idpeliculaCLM,
             this.tituloPeliculaCLM,
             this.generoCLM});
-            this.dataGridView1.Location = new System.Drawing.Point(30, 179);
+            this.dataGridView1.Location = new System.Drawing.Point(45, 179);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(495, 236);
+            this.dataGridView1.Size = new System.Drawing.Size(457, 236);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.UseWaitCursor = true;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // idCLM
-            // 
-            this.idCLM.HeaderText = "id";
-            this.idCLM.Name = "idCLM";
-            // 
-            // tituloPeliculaCLM
-            // 
-            this.tituloPeliculaCLM.HeaderText = "Titulo de la pelicula";
-            this.tituloPeliculaCLM.Name = "tituloPeliculaCLM";
-            this.tituloPeliculaCLM.Width = 200;
-            // 
-            // generoCLM
-            // 
-            this.generoCLM.HeaderText = "Genero de la pelicula";
-            this.generoCLM.Name = "generoCLM";
-            this.generoCLM.Width = 150;
             // 
             // CBgeneros
             // 
@@ -189,6 +174,23 @@
             this.txtCantidadTickets.Size = new System.Drawing.Size(100, 23);
             this.txtCantidadTickets.TabIndex = 0;
             // 
+            // idpeliculaCLM
+            // 
+            this.idpeliculaCLM.HeaderText = "ID de la pelicula";
+            this.idpeliculaCLM.Name = "idpeliculaCLM";
+            // 
+            // tituloPeliculaCLM
+            // 
+            this.tituloPeliculaCLM.HeaderText = "Titulo de la pelicula";
+            this.tituloPeliculaCLM.Name = "tituloPeliculaCLM";
+            this.tituloPeliculaCLM.Width = 200;
+            // 
+            // generoCLM
+            // 
+            this.generoCLM.HeaderText = "Genero de la pelicula";
+            this.generoCLM.Name = "generoCLM";
+            this.generoCLM.Width = 150;
+            // 
             // consulta_funciones_mas_vendidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -225,7 +227,7 @@
         private GroupBox groupBox2;
         private TextBox txtCantidadTickets;
         private Button btnConsultarTickets;
-        private DataGridViewTextBoxColumn idCLM;
+        private DataGridViewTextBoxColumn idpeliculaCLM;
         private DataGridViewTextBoxColumn tituloPeliculaCLM;
         private DataGridViewTextBoxColumn generoCLM;
     }
