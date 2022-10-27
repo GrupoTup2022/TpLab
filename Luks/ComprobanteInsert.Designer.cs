@@ -30,14 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComprobanteInsert));
             this.dgv_tickets = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horarioticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tituloTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PreciosinDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuentoticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombrePromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbo_peli = new System.Windows.Forms.ComboBox();
             this.cbo_sala = new System.Windows.Forms.ComboBox();
             this.cbo_horario = new System.Windows.Forms.ComboBox();
@@ -71,6 +63,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horarioticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PreciosinDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descuentoticket = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombrePromo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioTicket = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Butacas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_cant)).BeginInit();
@@ -102,70 +102,6 @@
             this.dgv_tickets.Size = new System.Drawing.Size(213, 352);
             this.dgv_tickets.TabIndex = 0;
             this.dgv_tickets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_tickets_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Numero de Butaca";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 85;
-            // 
-            // salaticket
-            // 
-            this.salaticket.HeaderText = "Sala";
-            this.salaticket.MinimumWidth = 6;
-            this.salaticket.Name = "salaticket";
-            this.salaticket.ReadOnly = true;
-            this.salaticket.Width = 95;
-            // 
-            // horarioticket
-            // 
-            this.horarioticket.HeaderText = "Horario";
-            this.horarioticket.MinimumWidth = 6;
-            this.horarioticket.Name = "horarioticket";
-            this.horarioticket.ReadOnly = true;
-            this.horarioticket.Width = 75;
-            // 
-            // tituloTicket
-            // 
-            this.tituloTicket.HeaderText = "Titulo";
-            this.tituloTicket.MinimumWidth = 6;
-            this.tituloTicket.Name = "tituloTicket";
-            this.tituloTicket.ReadOnly = true;
-            this.tituloTicket.Width = 125;
-            // 
-            // PreciosinDescuento
-            // 
-            this.PreciosinDescuento.HeaderText = "Precio sin descuento";
-            this.PreciosinDescuento.MinimumWidth = 6;
-            this.PreciosinDescuento.Name = "PreciosinDescuento";
-            this.PreciosinDescuento.ReadOnly = true;
-            this.PreciosinDescuento.Width = 125;
-            // 
-            // Descuentoticket
-            // 
-            this.Descuentoticket.HeaderText = "Descuento";
-            this.Descuentoticket.MinimumWidth = 6;
-            this.Descuentoticket.Name = "Descuentoticket";
-            this.Descuentoticket.ReadOnly = true;
-            this.Descuentoticket.Width = 125;
-            // 
-            // NombrePromo
-            // 
-            this.NombrePromo.HeaderText = "Promo";
-            this.NombrePromo.MinimumWidth = 6;
-            this.NombrePromo.Name = "NombrePromo";
-            this.NombrePromo.ReadOnly = true;
-            this.NombrePromo.Width = 125;
-            // 
-            // PrecioTicket
-            // 
-            this.PrecioTicket.HeaderText = "PrecioFinal";
-            this.PrecioTicket.MinimumWidth = 6;
-            this.PrecioTicket.Name = "PrecioTicket";
-            this.PrecioTicket.ReadOnly = true;
-            this.PrecioTicket.Width = 125;
             // 
             // cbo_peli
             // 
@@ -503,6 +439,70 @@
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Numero de Butaca";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 85;
+            // 
+            // salaticket
+            // 
+            this.salaticket.HeaderText = "Sala";
+            this.salaticket.MinimumWidth = 6;
+            this.salaticket.Name = "salaticket";
+            this.salaticket.ReadOnly = true;
+            this.salaticket.Width = 95;
+            // 
+            // horarioticket
+            // 
+            this.horarioticket.HeaderText = "Horario";
+            this.horarioticket.MinimumWidth = 6;
+            this.horarioticket.Name = "horarioticket";
+            this.horarioticket.ReadOnly = true;
+            this.horarioticket.Width = 75;
+            // 
+            // tituloTicket
+            // 
+            this.tituloTicket.HeaderText = "Titulo";
+            this.tituloTicket.MinimumWidth = 6;
+            this.tituloTicket.Name = "tituloTicket";
+            this.tituloTicket.ReadOnly = true;
+            this.tituloTicket.Width = 125;
+            // 
+            // PreciosinDescuento
+            // 
+            this.PreciosinDescuento.HeaderText = "Precio sin descuento";
+            this.PreciosinDescuento.MinimumWidth = 6;
+            this.PreciosinDescuento.Name = "PreciosinDescuento";
+            this.PreciosinDescuento.ReadOnly = true;
+            this.PreciosinDescuento.Width = 125;
+            // 
+            // Descuentoticket
+            // 
+            this.Descuentoticket.HeaderText = "Descuento";
+            this.Descuentoticket.MinimumWidth = 6;
+            this.Descuentoticket.Name = "Descuentoticket";
+            this.Descuentoticket.ReadOnly = true;
+            this.Descuentoticket.Width = 125;
+            // 
+            // NombrePromo
+            // 
+            this.NombrePromo.HeaderText = "Promo";
+            this.NombrePromo.MinimumWidth = 6;
+            this.NombrePromo.Name = "NombrePromo";
+            this.NombrePromo.ReadOnly = true;
+            this.NombrePromo.Width = 125;
+            // 
+            // PrecioTicket
+            // 
+            this.PrecioTicket.HeaderText = "Precio Final";
+            this.PrecioTicket.MinimumWidth = 6;
+            this.PrecioTicket.Name = "PrecioTicket";
+            this.PrecioTicket.ReadOnly = true;
+            this.PrecioTicket.Width = 125;
+            // 
             // ComprobanteInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -582,6 +582,11 @@
         private Label label11;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private DataGridViewCheckBoxColumn A;
+        private DataGridViewCheckBoxColumn B;
+        private DataGridViewCheckBoxColumn C;
+        private DataGridViewCheckBoxColumn D;
+        private DataGridViewCheckBoxColumn E;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn salaticket;
         private DataGridViewTextBoxColumn horarioticket;
@@ -590,10 +595,5 @@
         private DataGridViewTextBoxColumn Descuentoticket;
         private DataGridViewTextBoxColumn NombrePromo;
         private DataGridViewTextBoxColumn PrecioTicket;
-        private DataGridViewCheckBoxColumn A;
-        private DataGridViewCheckBoxColumn B;
-        private DataGridViewCheckBoxColumn C;
-        private DataGridViewCheckBoxColumn D;
-        private DataGridViewCheckBoxColumn E;
     }
 }

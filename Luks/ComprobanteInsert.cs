@@ -21,6 +21,7 @@ namespace TpLab.Luks
         Sala sala;
         Funcion Funcion;
         int cant;
+        int ncant_ant;
         List<Ticket> tickets;
         public List<Pagos> PagosList { get; set; }
         Ticket ticket;
@@ -47,6 +48,7 @@ namespace TpLab.Luks
             Funcion.Horario = horario;
             Funcion.Sala = sala;
             cant = 1;
+            ncant_ant = 1;
         }
 
 
@@ -273,6 +275,7 @@ namespace TpLab.Luks
                 //n_cant.Maximum = Convert.ToDecimal(MaxButacas());
                 n_cant.Enabled = true;
                 n_cant.Value = 1;
+                cant = Convert.ToInt32(n_cant.Value);
                 if (cbo_sala.SelectedValue != null)
                 {
                     CargarDgvButacas();
@@ -284,10 +287,11 @@ namespace TpLab.Luks
 
         private void n_cant_ValueChanged(object sender, EventArgs e)
         {
-            if ((Convert.ToInt32(n_cant.Value)-cant)>0)
-                cant = Convert.ToInt32(n_cant.Value);
+            if ((Convert.ToInt32(n_cant.Value) - ncant_ant)>0)
+                cant += Convert.ToInt32(n_cant.Value) - ncant_ant;
             else
-                cant = Convert.ToInt32(n_cant.Value);
+                cant -= Convert.ToInt32(n_cant.Value) - ncant_ant;
+            ncant_ant = Convert.ToInt32(n_cant.Value);
         }
 
         private void dgv_Butacas_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -333,9 +337,9 @@ namespace TpLab.Luks
         private void btn_pagos_Click(object sender, EventArgs e)
         {
             monto = 0;
-            foreach (Ticket t in tickets)
+            foreach (DataGridViewRow r in dgv_tickets.Rows)
             {
-                monto = (t.Funcion.Precio * t.Promo.Porcentaje / 100) + monto;
+                monto = Convert.ToDouble(r.Cells["PrecioTicket"].Value.ToString()) + monto;
             }
             PagosForm pagos = new PagosForm(monto,PagosList);
             pagos.Show();
