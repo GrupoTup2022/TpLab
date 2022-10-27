@@ -54,5 +54,10 @@ namespace TpLab.Nicolas
         {
             Dispose();
         }
+
+        private void DGVVentaSalaThisYear_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
