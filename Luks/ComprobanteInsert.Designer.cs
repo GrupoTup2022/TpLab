@@ -361,22 +361,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Alef", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label6.Location = new System.Drawing.Point(45, 185);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 20);
+            this.label6.Size = new System.Drawing.Size(58, 18);
             this.label6.TabIndex = 15;
             this.label6.Text = "Butaca:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Alef", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label7.Location = new System.Drawing.Point(637, 20);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(61, 20);
+            this.label7.Size = new System.Drawing.Size(60, 18);
             this.label7.TabIndex = 16;
             this.label7.Text = "Tickets:";
             // 
@@ -392,22 +392,22 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Alef", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label8.Location = new System.Drawing.Point(434, 532);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(145, 24);
+            this.label8.Size = new System.Drawing.Size(143, 22);
             this.label8.TabIndex = 19;
             this.label8.Text = "Forma de Venta:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Alef", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label9.Location = new System.Drawing.Point(181, 536);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 24);
+            this.label9.Size = new System.Drawing.Size(129, 22);
             this.label9.TabIndex = 20;
             this.label9.Text = "Agregar forma ";
             // 
@@ -425,7 +425,7 @@
             // btn_cancelar
             // 
             this.btn_cancelar.BackColor = System.Drawing.Color.Red;
-            this.btn_cancelar.Font = new System.Drawing.Font("Alef", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_cancelar.ForeColor = System.Drawing.Color.White;
             this.btn_cancelar.Location = new System.Drawing.Point(12, 552);
             this.btn_cancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -484,11 +484,11 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Alef", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label11.Location = new System.Drawing.Point(232, 560);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 24);
+            this.label11.Size = new System.Drawing.Size(75, 22);
             this.label11.TabIndex = 27;
             this.label11.Text = "de pago";
             // 
@@ -547,6 +547,7 @@
             this.Controls.Add(this.dgv_tickets);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ComprobanteInsert";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Insertar Comprobante";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_tickets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Butacas)).EndInit();

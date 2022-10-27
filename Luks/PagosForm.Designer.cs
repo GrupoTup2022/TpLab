@@ -56,22 +56,22 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label1.Location = new System.Drawing.Point(8, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 23);
+            this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Forma de Pago:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label2.Location = new System.Drawing.Point(71, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 23);
+            this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 2;
             this.label2.Text = "Monto:";
             // 
@@ -122,22 +122,22 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label3.Location = new System.Drawing.Point(17, 227);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 23);
+            this.label3.Size = new System.Drawing.Size(132, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Monto Restante:";
             // 
             // lbl_restante
             // 
             this.lbl_restante.AutoSize = true;
-            this.lbl_restante.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_restante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_restante.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lbl_restante.Location = new System.Drawing.Point(190, 227);
             this.lbl_restante.Name = "lbl_restante";
-            this.lbl_restante.Size = new System.Drawing.Size(52, 23);
+            this.lbl_restante.Size = new System.Drawing.Size(53, 20);
             this.lbl_restante.TabIndex = 6;
             this.lbl_restante.Text = "label4";
             this.lbl_restante.Click += new System.EventHandler(this.lbl_restante_Click);
@@ -145,11 +145,11 @@
             // lbl_total
             // 
             this.lbl_total.AutoSize = true;
-            this.lbl_total.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_total.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.lbl_total.Location = new System.Drawing.Point(190, 273);
             this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Size = new System.Drawing.Size(51, 23);
+            this.lbl_total.Size = new System.Drawing.Size(53, 20);
             this.lbl_total.TabIndex = 8;
             this.lbl_total.Text = "label5";
             this.lbl_total.Click += new System.EventHandler(this.label5_Click);
@@ -157,18 +157,18 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.label6.Location = new System.Drawing.Point(27, 273);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 23);
+            this.label6.Size = new System.Drawing.Size(102, 20);
             this.label6.TabIndex = 7;
             this.label6.Text = "Monto Total:";
             // 
             // btn_agregar
             // 
             this.btn_agregar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_agregar.Font = new System.Drawing.Font("Alef", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_agregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_agregar.Location = new System.Drawing.Point(163, 159);
             this.btn_agregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -182,7 +182,7 @@
             // btn_terminar
             // 
             this.btn_terminar.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btn_terminar.Font = new System.Drawing.Font("Alef", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_terminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_terminar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_terminar.Location = new System.Drawing.Point(384, 306);
             this.btn_terminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -212,6 +212,7 @@
             this.Controls.Add(this.cb_fp);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PagosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Pago";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).EndInit();
             this.ResumeLayout(false);
