@@ -377,5 +377,10 @@ namespace TpLab.Luks
         {
 
         }
+
+        private void ComprobanteInsert_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
