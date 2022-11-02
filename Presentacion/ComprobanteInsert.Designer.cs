@@ -395,7 +395,7 @@
             // 
             // btn_comprobante
             // 
-            this.btn_comprobante.Image = global::TpLab.Properties.Resources.okPNG64;
+            this.btn_comprobante.Image = global::FrontCine.Properties.Resources.okPNG64;
             this.btn_comprobante.Location = new System.Drawing.Point(1101, 406);
             this.btn_comprobante.Name = "btn_comprobante";
             this.btn_comprobante.Size = new System.Drawing.Size(61, 41);
@@ -418,7 +418,7 @@
             // 
             // btn_pagos
             // 
-            this.btn_pagos.Image = global::TpLab.Properties.Resources.plus64;
+            this.btn_pagos.Image = global::FrontCine.Properties.Resources.plus64;
             this.btn_pagos.Location = new System.Drawing.Point(278, 364);
             this.btn_pagos.Name = "btn_pagos";
             this.btn_pagos.Size = new System.Drawing.Size(47, 38);
@@ -472,7 +472,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TpLab.Properties.Resources.LogoPng;
+            this.pictureBox1.Image = global::FrontCine.Properties.Resources.LogoPng;
             this.pictureBox1.Location = new System.Drawing.Point(10, 9);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";

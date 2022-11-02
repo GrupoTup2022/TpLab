@@ -43,7 +43,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TpLab.Properties.Resources.LogoPng;
+            this.pictureBox1.Image = global::FrontCine.Properties.Resources.LogoPng;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(53, 64);
@@ -53,7 +53,7 @@
             // 
             // PictureBoxPP
             // 
-            this.PictureBoxPP.Image = global::TpLab.Properties.Resources.LoginPP;
+            this.PictureBoxPP.Image = global::FrontCine.Properties.Resources.LoginPP;
             this.PictureBoxPP.Location = new System.Drawing.Point(221, 52);
             this.PictureBoxPP.Name = "PictureBoxPP";
             this.PictureBoxPP.Size = new System.Drawing.Size(183, 165);
@@ -64,7 +64,7 @@
             // BtnExit
             // 
             this.BtnExit.FlatAppearance.BorderSize = 0;
-            this.BtnExit.Image = global::TpLab.Properties.Resources.Remove64x64;
+            this.BtnExit.Image = global::FrontCine.Properties.Resources.Remove64x64;
             this.BtnExit.Location = new System.Drawing.Point(565, 12);
             this.BtnExit.Margin = new System.Windows.Forms.Padding(0);
             this.BtnExit.Name = "BtnExit";

@@ -39,7 +39,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TpLab.Properties.Resources.LogoPng;
+            this.pictureBox1.Image = global::FrontCine.Properties.Resources.LogoPng;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 127);
@@ -49,7 +49,7 @@
             // 
             // button1
             // 
-            this.button1.Image = global::TpLab.Properties.Resources.FncMasVendidasBTN1;
+            this.button1.Image = global::FrontCine.Properties.Resources.FncMasVendidasBTN1;
             this.button1.Location = new System.Drawing.Point(178, 53);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(300, 150);
@@ -59,7 +59,7 @@
             // 
             // button2
             // 
-            this.button2.Image = global::TpLab.Properties.Resources.btnConsultarTickets;
+            this.button2.Image = global::FrontCine.Properties.Resources.btnConsultarTickets;
             this.button2.Location = new System.Drawing.Point(178, 209);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(300, 150);
@@ -69,7 +69,7 @@
             // 
             // button3
             // 
-            this.button3.Image = global::TpLab.Properties.Resources.btnMasVendidas;
+            this.button3.Image = global::FrontCine.Properties.Resources.btnMasVendidas;
             this.button3.Location = new System.Drawing.Point(506, 53);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(300, 150);
@@ -79,7 +79,7 @@
             // 
             // button4
             // 
-            this.button4.Image = global::TpLab.Properties.Resources.btnEstadisticas;
+            this.button4.Image = global::FrontCine.Properties.Resources.btnEstadisticas;
             this.button4.Location = new System.Drawing.Point(506, 209);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(300, 150);
@@ -89,7 +89,7 @@
             // 
             // button5
             // 
-            this.button5.Image = global::TpLab.Properties.Resources.btnNuevoComprobante;
+            this.button5.Image = global::FrontCine.Properties.Resources.btnNuevoComprobante;
             this.button5.Location = new System.Drawing.Point(178, 365);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(628, 150);
